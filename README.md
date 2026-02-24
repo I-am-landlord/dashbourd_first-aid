@@ -1,1 +1,1 @@
-# dashbourd_first-aid
+This dashboard was created to showcase achievements and present key metrics using an interactive, map-based analytics interface. It allows users to explore data by regions, programs, and categories in a clear and visually engaging way.
