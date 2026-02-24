@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --brand-orange: #ED9740; 
+            --brand-blue: #60ABAF; 
+            --brand-dark: #1E293B;
+            --brand-green: #00ac0f; 
+        }
+        
+        body { background: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; margin: 0; color: var(--brand-dark); }
+        
+        .content-section { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section-title { font-weight: 900; text-transform: uppercase; font-style: italic; font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .section-title::before { content: ''; display: block; width: 30px; height: 4px; background: var(--brand-orange); }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .info-card { border-left: 3px solid #f1f5f9; padding-left: 1.5rem; }
+        .info-card h4 { font-weight: 900; text-transform: uppercase; font-size: 0.75rem; color: var(--brand-orange); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+        .info-list { list-style: none; padding: 0; margin: 0; }
+        .info-list li { font-size: 0.95rem; margin-bottom: 0.5rem; line-height: 1.4; color: #475569; position: relative; }
+        
+        /* Таймлайн */
+        .timeline-container { position: relative; max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .timeline-line { position: absolute; left: 30px; top: 0; bottom: 0; width: 2px; background: #f1f5f9; }
+        @media (min-width: 1024px) { .timeline-line { left: 50%; transform: translateX(-50%); } }
+
+        .stage-card { position: relative; width: calc(100% - 60px); margin-left: auto; margin-bottom: 60px; transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1); opacity: 0; transform: translateY(30px); }
+        @media (min-width: 1024px) { 
+            .stage-card { width: 45%; margin-bottom: 80px; } 
+            .stage-left { margin-right: auto; margin-left: 0; text-align: right; } 
+            .stage-right { margin-left: auto; margin-right: 0; text-align: left; } 
+        }
+        .stage-card.visible { opacity: 1; transform: translateY(0); }
+        
+        .stage-dot { position: absolute; top: 24px; width: 16px; height: 16px; background: white; border: 3px solid #cbd5e1; border-radius: 50%; z-index: 10; left: -42px; }
+        @media (min-width: 1024px) { 
+            .stage-left .stage-dot { right: -63px; left: auto; } 
+            .stage-right .stage-dot { left: -63px; } 
+        }
+
+        .image-box { width: 100%; height: 200px; border-radius: 1.5rem; overflow: hidden; margin-bottom: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: #f8fafc; }
+        @media (min-width: 768px) { .image-box { height: 260px; border-radius: 2.5rem; } }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        .date-badge { display: inline-block; padding: 6px 16px; background: var(--brand-dark); color: white; border-radius: 10px; font-size: 10px; font-weight: 900; text-transform: uppercase; margin-bottom: 12px; }
+        .status-tag { font-size: 10px; font-weight: 900; text-transform: uppercase; margin-top: 15px; display: block; }
+        .is-done { border-color: var(--brand-blue) !important; color: var(--brand-blue); }
+        .is-active { border-color: var(--brand-orange) !important; color: var(--brand-orange); }
+        .is-future { border-color: var(--brand-green) !important; color: var(--brand-green); }
+    </style>
+</head>
+<body class="py-12">
+
+    <header class="max-w-6xl mx-auto mb-16 px-6">
+        <h1 id="main-title" class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter leading-tight"></h1>
+        <p id="main-subtitle" class="text-slate-400 font-bold uppercase text-[9px] md:text-[10px] tracking-[0.3em] mt-3"></p>
+    </header>
+
+    <section class="content-section mb-12">
+        <div class="grid-container">
+            <div class="info-card">
+                <h4 data-i18n="rd.meta_title">Мета проєкту</h4>
+                <ul class="info-list">
+                    <li data-i18n="rd.meta_1">Розробка та <b>ВПРОВАДЖЕННЯ</b> сучасної цифрової навчальної екосистеми;</li>
+                    <li data-i18n="rd.meta_2">Забезпечення доступності та гнучкості навчання.</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4 data-i18n="rd.tasks_title">Завдання платформи</h4>
+                <ul class="info-list">
+                    <li data-i18n="rd.task_1">Розробка інтуїтивного середовища;</li>
+                    <li data-i18n="rd.task_2">Сертифікація та аналітика процесів;</li>
+                    <li data-i18n="rd.task_3">Інтеграція із CRM;</li>
+                    <li data-i18n="rd.task_4">Створення якісного навчального контенту.</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h4 data-i18n="rd.stages_title">Етапи реалізації</h4>
+                <ul class="info-list text-xs">
+                    <li data-i18n="rd.stage_step_1">1. Аналітика та проєктування</li>
+                    <li data-i18n="rd.stage_step_2">2. Розробка контенту</li>
+                    <li data-i18n="rd.stage_step_3">3. <b>РОЗРОБКА ТА НАПОВНЕННЯ</b></li>
+                    <li data-i18n="rd.stage_step_4">4. <b>ПІЛОТУВАННЯ</b> та впровадження</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2 class="section-title" data-i18n="rd.map_title">Карта розвитку</h2>
+    </section>
+
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div id="roadmap-wrapper"></div>
+    </div>
+
+    <section class="content-section mt-12 mb-20">
+        <h2 class="section-title" data-i18n="rd.vector_title">Вектор подальшого розвитку</h2>
+        <div class="grid md:grid-cols-3 gap-8 mt-8">
+            <div class="bg-slate-50 p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-[#ED9740] rounded-full mb-4 flex items-center justify-center text-white font-bold">01</div>
+                <h3 class="font-black uppercase italic text-lg mb-3" data-i18n="rd.vector_1_title">Освітній контент</h3>
+                <p class="text-sm text-slate-600" data-i18n="rd.vector_1_desc">Нові програмні траєкторії та регулярне оновлення існуючих матеріалів для підтримки актуальності знань.</p>
+            </div>
+            <div class="bg-slate-50 p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-[#60ABAF] rounded-full mb-4 flex items-center justify-center text-white font-bold">02</div>
+                <h3 class="font-black uppercase italic text-lg mb-3" data-i18n="rd.vector_2_title">Технології</h3>
+                <p class="text-sm text-slate-600" data-i18n="rd.vector_2_desc">Впровадження автоматизованої аналітики та постійне вдосконалення функціоналу платформи.</p>
+            </div>
+            <div class="bg-slate-50 p-8 rounded-[2rem]">
+                <div class="w-10 h-10 bg-[#1E293B] rounded-full mb-4 flex items-center justify-center text-white font-bold">03</div>
+                <h3 class="font-black uppercase italic text-lg mb-3" data-i18n="rd.vector_3_title">Сталість</h3>
+                <p class="text-sm text-slate-600" data-i18n="rd.vector_3_desc">Розвиток внутрішньої команди адміністраторів, регулярний моніторинг та масштабне розширення системи.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const currentLang = localStorage.getItem('lang') || 'uk';
+
+        async function init() {
+            try {
+                const [dataRes, transRes] = await Promise.all([
+                    fetch('../assets/images/data.json'),
+                    fetch('../assets/translations.json')
+                ]);
+                
+                const allData = await dataRes.json();
+                const allTrans = await transRes.json();
+                const translations = allTrans[currentLang] || allTrans['uk'];
+                const roadmapData = allData.roadmap;
+
+                // 1. Статичні переклади сторінки
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[key]) el.innerHTML = translations[key];
+                });
+                function changeLanguage(lang) {
+                    localStorage.setItem('lang', lang);
+                    // Примусово знімаємо блокування перед перезавантаженням
+                    document.body.style.overflow = 'auto';
+                    window.location.reload();
+}
+                // 2. Заголовок (динамічний з data.json)
+                const rawTitle = (currentLang === 'en' && roadmapData.project_title_en) ? roadmapData.project_title_en : roadmapData.project_title;
+                const words = rawTitle.split(' ');
+                const first = words.shift();
+                document.getElementById('main-title').innerHTML = `${first} <span class="text-[#ED9740]">${words.join(' ')}</span>`;
+                
+                document.getElementById('main-subtitle').innerText = (currentLang === 'en' && roadmapData.project_subtitle_en) ? roadmapData.project_subtitle_en : roadmapData.project_subtitle;
+
+                // 3. Рендер карток таймлайну
+                const wrapper = document.getElementById('roadmap-wrapper');
+                wrapper.innerHTML = '';
+
+                roadmapData.stages.forEach((stage, index) => {
+                    const isEven = index % 2 !== 0;
+                    
+                    // Визначаємо статус
+                    let statusClass = 'is-future';
+                    let statusText = translations['rd.status_future'] || '○ Очікується';
+                    let badgeColor = 'var(--brand-green)';
+
+                    if (stage.status === 'done') {
+                        statusClass = 'is-done';
+                        statusText = translations['rd.status_done'] || '● Завершено';
+                        badgeColor = 'var(--brand-blue)';
+                    } else if (stage.status === 'active') {
+                        statusClass = 'is-active';
+                        statusText = translations['rd.status_active'] || '○ У процесі';
+                        badgeColor = 'var(--brand-dark)';
+                    }
+
+                    // Тексти етапу
+                    const sDate = (currentLang === 'en' && stage.date_en) ? stage.date_en : stage.date;
+                    const sTitle = (currentLang === 'en' && stage.title_en) ? stage.title_en : stage.title;
+                    const sDesc = (currentLang === 'en' && stage.description_en) ? stage.description_en : stage.description;
+
+                    const cardHtml = `
+                        <div class="stage-card ${isEven ? 'stage-right' : 'stage-left'}" style="transition-delay: ${index * 100}ms">
+                            <div class="stage-dot ${statusClass}"></div>
+                            <div class="date-badge" style="background: ${badgeColor}">${sDate}</div>
+                            <div class="image-box">
+                                <img src="../${stage.image}" alt="${sTitle}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Digital+Project'">
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-black uppercase italic mb-2 leading-tight">${sTitle}</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed max-w-md ${isEven ? '' : 'lg:ml-auto'}">${sDesc}</p>
+                            <span class="status-tag ${statusClass}">${statusText}</span>
+                        </div>
+                    `;
+                    wrapper.insertAdjacentHTML('beforeend', cardHtml);
+                });
+
+                // Анімація появи
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) entry.target.classList.add('visible');
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.stage-card').forEach(card => observer.observe(card));
+
+            } catch (err) {
+                console.error("Roadmap Init Error:", err);
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

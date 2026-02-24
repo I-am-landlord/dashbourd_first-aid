@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusion Research 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root { --brand-red: #DA291C; --brand-teal: #60ABAF; --brand-orange: #ED9740; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #f4f7f6; 
+            color: #0f172a; 
+            margin: 0;
+            overflow-y: auto !important; /* Запобігання багу iframe */
+        }
+        .card { background: white; padding: 32px; border-radius: 4px; border: 1px solid #e2e8f0; }
+        .stat-label { font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.2em; }
+        .swiper { width: 100%; height: 450px; border-radius: 2px; position: relative; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
+        #lightbox { display: none; }
+        #lightbox.active { display: flex; }
+    </style>
+</head>
+<body class="p-4 lg:p-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="bg-white p-6 border-b-4 border-black mb-8 shadow-sm text-center">
+            <h1 id="res-title" class="text-4xl font-black uppercase italic tracking-tighter leading-none" data-i18n="res.title"></h1>
+            <p class="stat-label mt-2" data-i18n="res.subtitle"></p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="card flex flex-col justify-center border-l-8 border-l-black">
+                <p class="stat-label mb-4" data-i18n="res.analysis_label"></p>
+                <p id="summary-text" class="text-xl font-medium leading-relaxed italic text-gray-700"></p>
+                <div class="mt-6">
+                    <span id="highlight-tag" class="bg-black text-white px-3 py-1 text-sm font-black uppercase"></span>
+                </div>
+            </div>
+            
+            <div class="swiper mySwiper">
+                <div id="swiper-wrapper" class="swiper-wrapper"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 border-b pb-4 gap-4">
+                <div>
+                    <p class="stat-label" data-i18n="res.reach_label"></p>
+                    <h3 class="text-2xl font-black uppercase italic" data-i18n="res.chart_title"></h3>
+                </div>
+                <div class="text-right">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" data-i18n="res.total_reach"></span>
+                    <p id="total-count" class="text-3xl font-black leading-none mt-1">0</p>
+                </div>
+            </div>
+            <div class="h-[500px] w-full">
+                <canvas id="inclusionStackedChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[2000] flex-col items-center justify-center">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-5xl font-thin z-[2100] hover:text-[#ED9740] transition-colors">&times;</button>
+        <div class="swiper lightboxSwiper w-full h-full">
+            <div id="lightbox-wrapper" class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const currentLang = localStorage.getItem('lang') || 'uk';
+        let researchChart;
+
+        function openLightbox(index) {
+            const lb = document.getElementById('lightbox');
+            lb.style.display = 'flex';
+            lb.classList.add('active');
+            window.lightboxSwiper.update();
+            window.lightboxSwiper.slideToLoop(index, 0);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        async function loadResearchData() {
+            try {
+                const [dataRes, transRes] = await Promise.all([
+                    fetch('../assets/images/data.json'),
+                    fetch('../assets/translations.json')
+                ]);
+                
+                const allData = await dataRes.json();
+                const allTrans = await transRes.json();
+                const translations = allTrans[currentLang] || allTrans['uk'];
+                const data = allData.research;
+
+                // 1. Статичні переклади
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[key]) el.innerHTML = translations[key];
+                });
+
+                function changeLanguage(lang) {
+                    localStorage.setItem('lang', lang);
+                    // Примусово знімаємо блокування перед перезавантаженням
+                    document.body.style.overflow = 'auto';
+                    window.location.reload();
+}
+
+                // 2. Контент із JSON
+                document.getElementById('summary-text').innerText = (currentLang === 'en' && data.summary_en) ? data.summary_en : data.summary;
+                document.getElementById('highlight-tag').innerText = (currentLang === 'en' && data.highlight_stats_en) ? data.highlight_stats_en : data.highlight_stats;
+
+                // 3. Слайдери
+                const swiperWrapper = document.getElementById('swiper-wrapper');
+                const lightboxWrapper = document.getElementById('lightbox-wrapper');
+                data.photos.forEach((url, index) => {
+                    swiperWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide"><img src="../${url}" onclick="openLightbox(${index})"></div>`);
+                    lightboxWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide flex items-center justify-center p-4"><img src="../${url}" class="max-w-full max-h-[90vh] object-contain"></div>`);
+                });
+
+                new Swiper(".mySwiper", { 
+                    pagination: { el: ".swiper-pagination", clickable: true },
+                    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                    loop: true, autoplay: { delay: 4000 }
+                });
+
+                window.lightboxSwiper = new Swiper(".lightboxSwiper", { 
+                    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                    loop: true, keyboard: { enabled: true }
+                });
+
+                // 4. Графік (Chart.js)
+                const total = Object.values(data.inclusion_data).flat().reduce((a, b) => a + (b || 0), 0);
+                document.getElementById('total-count').innerText = total.toLocaleString();
+
+                const ctx = document.getElementById('inclusionStackedChart').getContext('2d');
+                if(researchChart) researchChart.destroy();
+                
+                researchChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: (currentLang === 'en' && data.months_en) ? data.months_en : data.months,
+                        datasets: [
+                            { label: translations['res.cat_arm'], data: data.inclusion_data.arm, backgroundColor: '#DA291C' },
+                            { label: translations['res.cat_leg'], data: data.inclusion_data.leg, backgroundColor: '#60ABAF' },
+                            { label: translations['res.cat_ride'], data: data.inclusion_data.ride, backgroundColor: '#ED9740' },
+                            { label: translations['res.cat_multi'], data: data.inclusion_data.arm_leg, backgroundColor: '#94a3b8' },
+                            { label: translations['res.cat_other'], data: data.inclusion_data.other, backgroundColor: '#000' }
+                        ]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        plugins: { legend: { position: 'top', align: 'end' } },
+                        scales: { x: { stacked: true }, y: { stacked: true } }
+                    }
+                });
+
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+
+        window.onload = loadResearchData;
+    </script>
+</body>
+</html>

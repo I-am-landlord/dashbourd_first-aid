@@ -1,0 +1,2848 @@
+{
+  "analytics": {
+    "regions": {
+      "UA-05": {
+        "name_uk": "Вінницька",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 2,
+                "persons": 32
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 3,
+                "persons": 48
+              },
+              "ben": {
+                "events": 48,
+                "persons": 624
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 2,
+                "persons": 32
+              },
+              "ben": {
+                "events": 31,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 1,
+                "persons": 20
+              },
+              "ben": {
+                "events": 20,
+                "persons": 13
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 56,
+                "persons": 1677
+              }
+            }
+          }
+        }
+      },
+      "UA-07": {
+        "name_uk": "Волинська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 2,
+                "persons": 32
+              },
+              "ben": {
+                "events": 68,
+                "persons": 1089
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 14,
+                "persons": 213
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 6,
+                "persons": 155
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 26
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 100,
+                "persons": 2978
+              }
+            }
+          }
+        }
+      },
+      "UA-12": {
+        "name_uk": "Дніпропетровська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 2,
+                "persons": 28
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 4,
+                "persons": 64
+              },
+              "ben": {
+                "events": 3,
+                "persons": 45
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 26,
+                "persons": 416
+              },
+              "ben": {
+                "events": 230,
+                "persons": 3769
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 18,
+                "persons": 292
+              },
+              "ben": {
+                "events": 12,
+                "persons": 183
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 4,
+                "persons": 77
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 1,
+                "persons": 20
+              },
+              "ben": {
+                "events": 178,
+                "persons": 3555
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 60,
+                "persons": 1707
+              }
+            }
+          }
+        }
+      },
+      "UA-14": {
+        "name_uk": "Донецька",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 15
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 19
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 30,
+                "persons": 476
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 5,
+                "persons": 67
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 22,
+                "persons": 441
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 34
+              }
+            }
+          }
+        }
+      },
+      "UA-18": {
+        "name_uk": "Житомирська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 11,
+                "persons": 130
+              },
+              "ben": {
+                "events": 2,
+                "persons": 47
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 14,
+                "persons": 417
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 1,
+                "persons": 20
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 44
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 4,
+                "persons": 64
+              },
+              "ben": {
+                "events": 46,
+                "persons": 733
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 23
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 110,
+                "persons": 3673
+              }
+            }
+          }
+        }
+      },
+      "UA-21": {
+        "name_uk": "Закарпатська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 5,
+                "persons": 88
+              },
+              "ben": {
+                "events": 1,
+                "persons": 4
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 1,
+                "persons": 14
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 4,
+                "persons": 64
+              },
+              "ben": {
+                "events": 64,
+                "persons": 7
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 1
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 4,
+                "persons": 140
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 90
+              }
+            }
+          }
+        }
+      },
+      "UA-23": {
+        "name_uk": "Запорізька",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 6,
+                "persons": 96
+              },
+              "ben": {
+                "events": 70,
+                "persons": 1066
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 7,
+                "persons": 112
+              },
+              "ben": {
+                "events": 11,
+                "persons": 174
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 4,
+                "persons": 100
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 4,
+                "persons": 64
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 15,
+                "persons": 395
+              }
+            }
+          }
+        }
+      },
+      "UA-26": {
+        "name_uk": "Івано-Франківська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 3,
+                "persons": 50
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 3,
+                "persons": 48
+              },
+              "ben": {
+                "events": 25,
+                "persons": 389
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 3,
+                "persons": 37
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 6,
+                "persons": 179
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 13
+              }
+            }
+          }
+        }
+      },
+      "UA-32": {
+        "name_uk": "Київська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 2,
+                "persons": 31
+              },
+              "ben": {
+                "events": 1,
+                "persons": 7
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 6,
+                "persons": 239
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 16,
+                "persons": 339
+              },
+              "ben": {
+                "events": 1,
+                "persons": 16
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 1,
+                "persons": 16
+              },
+              "ben": {
+                "events": 23,
+                "persons": 368
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 29
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 120,
+                "persons": 3642
+              }
+            }
+          }
+        }
+      },
+      "UA-30": {
+        "name_uk": "Київ",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 87,
+                "persons": 1159
+              },
+              "ben": {
+                "events": 57,
+                "persons": 769
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 6,
+                "persons": 65
+              },
+              "ben": {
+                "events": 12,
+                "persons": 124
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 10,
+                "persons": 147
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 9,
+                "persons": 243
+              },
+              "ben": {
+                "events": 19,
+                "persons": 507
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 2,
+                "persons": 57
+              },
+              "ben": {
+                "events": 7,
+                "persons": 182
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 7,
+                "persons": 101
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 26
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 20,
+                "persons": 388
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 260,
+                "persons": 7825
+              }
+            }
+          }
+        }
+      },
+      "UA-35": {
+        "name_uk": "Кіровоградська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 42
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 3,
+                "persons": 48
+              },
+              "ben": {
+                "events": 49,
+                "persons": 784
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 1,
+                "persons": 16
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 25
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 60,
+                "persons": 1705
+              }
+            }
+          }
+        }
+      },
+      "UA-46": {
+        "name_uk": "Львівська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 28,
+                "persons": 372
+              },
+              "ben": {
+                "events": 10,
+                "persons": 131
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 2,
+                "persons": 27
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 15
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 1,
+                "persons": 20
+              },
+              "ben": {
+                "events": 40,
+                "persons": 134
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 16,
+                "persons": 256
+              },
+              "ben": {
+                "events": 35,
+                "persons": 548
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 13
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 204,
+                "persons": 6099
+              }
+            }
+          }
+        }
+      },
+      "UA-48": {
+        "name_uk": "Миколаївська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 5,
+                "persons": 81
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 7,
+                "persons": 112
+              },
+              "ben": {
+                "events": 35,
+                "persons": 562
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 9,
+                "persons": 140
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 5,
+                "persons": 126
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 20,
+                "persons": 590
+              }
+            }
+          }
+        }
+      },
+      "UA-51": {
+        "name_uk": "Одеська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 3,
+                "persons": 37
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 20
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 11,
+                "persons": 176
+              },
+              "ben": {
+                "events": 70,
+                "persons": 1075
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 13,
+                "persons": 200
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 10,
+                "persons": 248
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 17,
+                "persons": 337
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 4,
+                "persons": 120
+              },
+              "ben": {
+                "events": 122,
+                "persons": 3656
+              }
+            }
+          }
+        }
+      },
+      "UA-53": {
+        "name_uk": "Полтавська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 2,
+                "persons": 32
+              },
+              "ben": {
+                "events": 14,
+                "persons": 214
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 18
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 35,
+                "persons": 1025
+              }
+            }
+          }
+        }
+      },
+      "UA-56": {
+        "name_uk": "Рівненська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 4,
+                "persons": 64
+              },
+              "ben": {
+                "events": 20,
+                "persons": 320
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 33
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 6,
+                "persons": 177
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 12
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 190,
+                "persons": 5656
+              }
+            }
+          }
+        }
+      },
+      "UA-61": {
+        "name_uk": "Тернопільська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 6,
+                "persons": 96
+              },
+              "ben": {
+                "events": 20,
+                "persons": 315
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 1,
+                "persons": 16
+              },
+              "ben": {
+                "events": 7,
+                "persons": 99
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 6,
+                "persons": 178
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 1,
+                "persons": 20
+              },
+              "ben": {
+                "events": 84,
+                "persons": 1661
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 2,
+                "persons": 60
+              },
+              "ben": {
+                "events": 78,
+                "persons": 2318
+              }
+            }
+          }
+        }
+      },
+      "UA-63": {
+        "name_uk": "Харківська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 11,
+                "persons": 144
+              },
+              "ben": {
+                "events": 1,
+                "persons": 22
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 34
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 17,
+                "persons": 417
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 1,
+                "persons": 28
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 72,
+                "persons": 1139
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 16
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 160,
+                "persons": 3134
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 13,
+                "persons": 364
+              }
+            }
+          }
+        }
+      },
+      "UA-65": {
+        "name_uk": "Херсонська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 1,
+                "persons": 16
+              },
+              "ben": {
+                "events": 56,
+                "persons": 881
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 9,
+                "persons": 140
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 7,
+                "persons": 112
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 1,
+                "persons": 20
+              },
+              "ben": {
+                "events": 1,
+                "persons": 14
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 21
+              }
+            }
+          }
+        }
+      },
+      "UA-68": {
+        "name_uk": "Хмельницька",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 5,
+                "persons": 63
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 1,
+                "persons": 27
+              },
+              "ben": {
+                "events": 24,
+                "persons": 552
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 9,
+                "persons": 144
+              },
+              "ben": {
+                "events": 91,
+                "persons": 1455
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 12
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 5,
+                "persons": 130
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 12,
+                "persons": 236
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 1,
+                "persons": 30
+              },
+              "ben": {
+                "events": 150,
+                "persons": 4367
+              }
+            }
+          }
+        }
+      },
+      "UA-71": {
+        "name_uk": "Черкаська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 1,
+                "persons": 17
+              },
+              "ben": {
+                "events": 1,
+                "persons": 14
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 2,
+                "persons": 32
+              },
+              "ben": {
+                "events": 27,
+                "persons": 422
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 8,
+                "persons": 156
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 1,
+                "persons": 30
+              },
+              "ben": {
+                "events": 56,
+                "persons": 1661
+              }
+            }
+          }
+        }
+      },
+      "UA-77": {
+        "name_uk": "Чернівецька",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 2,
+                "persons": 32
+              },
+              "ben": {
+                "events": 20,
+                "persons": 312
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 6,
+                "persons": 92
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 2,
+                "persons": 44
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 8,
+                "persons": 156
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 1,
+                "persons": 30
+              },
+              "ben": {
+                "events": 103,
+                "persons": 3093
+              }
+            }
+          }
+        }
+      },
+      "UA-74": {
+        "name_uk": "Чернігівська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 3,
+                "persons": 41
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 3,
+                "persons": 35
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 1,
+                "persons": 18
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 14,
+                "persons": 362
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 60,
+                "persons": 934
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 16,
+                "persons": 316
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 37,
+                "persons": 1113
+              }
+            }
+          }
+        }
+      },
+      "UA-59": {
+        "name_uk": "Сумська",
+        "team": "mixed",
+        "stats": {
+          "nc": {
+            "6m": {
+              "comm": {
+                "events": 4,
+                "persons": 50
+              },
+              "ben": {
+                "events": 17,
+                "persons": 233
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 7,
+                "persons": 109
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 14,
+                "persons": 262
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 1,
+                "persons": 24
+              },
+              "ben": {
+                "events": 1,
+                "persons": 18
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 5,
+                "persons": 229
+              }
+            }
+          },
+          "region": {
+            "6m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "12m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "48m": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "seminar": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            },
+            "mk": {
+              "comm": {
+                "events": 0,
+                "persons": 0
+              },
+              "ben": {
+                "events": 0,
+                "persons": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+    "geography": {
+    "global_stats": {
+      "title": "Програма Генрі",
+      "description": "Навчальна програма «Генрі - перша допомога для дітей» спрямована на навчання дітей першій допомозі вже у ранньому віці в закладах дошкільної освіти.",
+      "schools": 74,
+      "children": 1956,
+      "kits": 74
+    },
+    "regions": [
+    { "id": "UA-74", 
+      "name": "Чернігівська", 
+      "year": 2025, 
+      "schools": 24, 
+      "children": 779, 
+      "kits": 24, 
+      "target": "Впроваджено 2025", 
+      "details": "Проєкт впроваджено через складну безпекову ситуацію після часткової окупації та руйнувань, щоб максимально поширити життєво необхідні знання і навички з першої допомоги.",
+      "details_en": "The project was implemented in response to the complex security situation following partial occupation and destruction, aiming to widely disseminate essential life-saving first aid knowledge and skills."
+    },
+    {"id": "UA-48", 
+      "name": "Миколаївська", 
+      "year": 2025, 
+      "schools": 25, 
+      "children": 481, 
+      "kits": 25, 
+      "target": "Впроваджено 2025", 
+      "details": "Проєкт реалізовано через близькість до зони активних бойових дій з метою підвищення готовності дітей та громад до реагування на надзвичайні ситуації.",
+      "details_en": "The project was implemented due to the proximity to active combat zones, with the aim of increasing the preparedness of children and communities to respond to emergencies."
+    },
+      
+    { "id": "UA-61", 
+      "name": "Тернопільська", 
+      "year": 2025, 
+      "schools": 25, 
+      "children": 696, 
+      "kits": 25, 
+      "target": "Впроваджено 2025", 
+      "details": "Проєкт запроваджено для посилення та сталого розвитку програм першої допомоги в регіоні за підтримки Норвезький Червоний Хрест, з урахуванням значної кількості внутрішньо переміщених сімей з дітьми.",
+      "details_en": "The project was introduced to strengthen and ensure the sustainable development of first aid programs in the region, with the support of the Norwegian Red Cross, taking into account the significant number of internally displaced families with children."
+    },
+      
+    { "id": "UA-51", 
+      "name": "Одеська", 
+      "year": 2026, 
+      "schools": 0, 
+      "children": 0, 
+      "kits": 0, 
+      "target": "Розширення 2026", 
+      "details": "Проєкт буде впроваджуватися у 2026 році завдяки великій кількості дітей, закладів освіти та стратегічному значенню регіону для широкого охоплення і інтеграції навчання першій допомозі у освітній процес Український Червоний Хрест.",
+      "details_en": "The project will be implemented in 2026 due to the large number of children and educational institutions, as well as the strategic importance of the region for broad outreach and the integration of first aid training into the educational process of the Ukrainian Red Cross."
+    },
+      {"id": "UA-68", 
+      "name": "Хмельницька", 
+      "year": 2026, 
+      "schools": 0, 
+      "children": 0, 
+      "kits": 0, 
+      "target": "Розширення 2026", 
+      "details": "Проєкт буде впроваджуватися у 2026 році через стабільний доступ до освіти та готовність громад впроваджувати інноваційні програми для забезпечення сталого навчання дітей навичкам першої допомоги.",
+      "details_en": "The project will be implemented in 2026 due to stable access to education and the readiness of communities to introduce innovative programs to ensure sustainable first aid skills training for children."
+    },
+      {"id": "UA-12", 
+      "name": "Дніпропетровська", 
+      "year": 2026, 
+      "schools": 0, 
+      "children": 0, 
+      "kits": 0, 
+      "target": "Розширення 2026", 
+      "details": "Проєкт буде впроваджуватися у 2026 році через близькість до зони бойових дій і значну кількість внутрішньо переміщених дітей для підвищення їх безпеки та розвитку навичок першої допомоги.",
+      "details_en": "The project will be implemented in 2026 due to the proximity to combat zones and the significant number of internally displaced children, with the aim of enhancing their safety and developing essential first aid skills."
+    }
+    ],
+    "photos": ["assets/images/g1.jpg", "assets/images/g3.jpg", "assets/images/g2.jpg", "assets/images/g4.jpg", "assets/images/g5.jpg"]
+  },
+
+  "medical": {
+    "global_stats": {
+    "total": 966,
+    "type_a": 291,
+    "type_b": 463,
+    "type_c": 192,
+    "type_d": 20, 
+    "description": "Загальні показники по всій території...",
+    "description_en": "General indicators throughout the territory..."
+},
+    "regions": [
+      {"id": "UA-30", "name": "Київ", "info": "", "details": {"type_a": 45, "type_b": 129, "type_c": 88, "type_d": 0}, "total": 262},
+      {"id": "UA-46", "name": "Львівська", "info": "", "details": {"type_a": 0, "type_b": 4, "type_c": 20, "type_d": 0  }, "total": 24},
+      {"id": "UA-12", "name": "Дніпропетровська", "info": "", "details": {"type_a": 1, "type_b": 0, "type_c": 1, "type_d": 0}, "total": 2},
+      {"id": "UA-63", "name": "Харківська", "info": "", "details": {"type_a": 13, "type_b": 0, "type_c": 0, "type_d": 0}, "total": 13},
+      {"id": "UA-51", "name": "Одеська", "info": "", "details": {"type_a": 1, "type_b": 20, "type_c": 0, "type_d": 20}, "total": 41},
+      {"id": "UA-05", "name": "Вінницька", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 20, "type_d": 0}, "total": 20},
+      {"id": "UA-07", "name": "Волинська", "info": "", "details": {"type_a": 0, "type_b": 60, "type_c": 0, "type_d": 0  }, "total": 60},
+      {"id": "UA-18", "name": "Житомирська", "info": "", "details": {"type_a": 0, "type_b": 20, "type_c": 30, "type_d": 0}, "total": 50},
+      {"id": "UA-21", "name": "Закарпатська", "info": "", "details": {"type_a": 1, "type_b": 0, "type_c": 0, "type_d": 0}, "total": 1},
+      {"id": "UA-23", "name": "Запорізька", "info": "", "details": {"type_a": 50, "type_b": 0, "type_c": 0, "type_d": 0}, "total": 50},
+      {"id": "UA-26", "name": "Івано-Франківська", "info": "", "details": {"type_a": 20, "type_b": 0, "type_c": 0, "type_d": 0}, "total": 20},
+      {"id": "UA-32", "name": "Київська", "info": "", "details": {"type_a": 2, "type_b": 0, "type_c": 30, "type_d": 0  }, "total": 32},
+      {"id": "UA-35", "name": "Кіровоградська", "info": "", "details": {"type_a": 30, "type_b": 50, "type_c": 0, "type_d": 0}, "total": 80},
+      {"id": "UA-09", "name": "Луганська", "info": "Релокована в Вінницьку та Рівненську області. Підтримка ВПО в громадах Рівненщини","info_en": "Relocated to Vinnytsia and Rivne regions. Support for IDPs in the communities of Rivne region", "details": {"type_a": 17, "type_b": 25, "type_c": 0, "type_d": 0}, "total": 42},
+      {"id": "UA-61", "name": "Тернопільська", "info": "", "details": {"type_a": 0, "type_b": 50, "type_c": 0, "type_d": 0}, "total": 50},
+      {"id": "UA-65", "name": "Херсонська", "info": "", "details": {"type_a": 0, "type_b": 30, "type_c": 0, "type_d": 0}, "total": 30},
+      {"id": "UA-71", "name": "Черкаська", "info": "", "details": {"type_a": 110, "type_b": 60, "type_c": 0, "type_d": 0  }, "total": 170},
+      {"id": "UA-74", "name": "Чернігівська", "info": "", "details": {"type_a": 1, "type_b": 15, "type_c": 3, "type_d": 0}, "total": 19},
+      {"id": "UA-43", "name": "АР Крим", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-14", "name": "Донецька", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-48", "name": "Миколаївська", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-53", "name": "Полтавська", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-56", "name": "Рівненська", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-59", "name": "Сумська", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-68", "name": "Хмельницька", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-77", "name": "Чернівецька", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0},
+      {"id": "UA-40", "name": "Севастополь", "info": "", "details": {"type_a": 0, "type_b": 0, "type_c": 0, "type_d": 0  }, "total": 0}
+      
+    ]
+  },
+
+    "roadmap": {
+    "project_title": "Навчальна платформа",
+    "project_title_en": "Learning Platform",
+    "project_subtitle": "Шлях від концепції до реалізації 2023-2026",
+    "project_subtitle_en": "The journey from concept to implementation 2023-2026",
+    "stages": [
+  { 
+    "date": "Жовтень 2023", 
+    "date_en": "October 2023",
+    "title": "Аналітика та проектування", 
+    "title_en": "Analytics and Design",
+    "description": "Проаналізовано потреби та необхідний функціонал навчальної платформи, досвід національних товариств та офіційний старт проекту", 
+    "description_en": "Analyzed requirements and necessary functionality of the learning platform, experience of national societies, and official project launch",
+    "image": "assets/images/d1.jpg", 
+    "status": "done"
+  },
+  {
+    "date": "Червень 2024", 
+    "date_en": "June 2024",
+    "title": "Discovery Phase", 
+    "title_en": "Discovery Phase",
+    "description": "Протягом квітня-червня було проведено дослідження потреб та технічних можливостей", 
+    "description_en": "Needs and technical capabilities research was conducted during April-June",
+    "image": "assets/images/d2.jpg", 
+    "status": "done"
+  },
+  {
+    "date": "Вересень 2025", 
+    "date_en": "September 2025",
+    "title": "Контент", 
+    "title_en": "Content",
+    "description": "З вересня 2024 по вересень 2025 була проведена значна робота зі створення контенту для наповнення тренінгів відео та картинками", 
+    "description_en": "Significant work was carried out from September 2024 to September 2025 on content creation, including videos and images for training materials",
+    "image": "assets/images/d3.jpg", 
+    "status": "done"
+  },
+  {
+    "date": "Квітень 2026", 
+    "date_en": "April 2026",
+    "title": "Створення навчальної платформи", 
+    "title_en": "Learning Platform Development",
+    "description": "З вересня 2025 року ведеться активна фаза розробки навчальної платформи та наповнення її контентом. Навчання адміністраторів.", 
+    "description_en": "Active development of the learning platform and content population has been underway since September 2025. Administrator training.",
+    "image": "assets/images/d4.jpg", 
+    "status": "active"
+  },
+  {
+    "date": "Травень 2026", 
+    "date_en": "May 2026",
+    "title": "Пілотування", 
+    "title_en": "Piloting",
+    "description": "З травня 2026 збір відгуків, аналіз аналітики, доопрацювання функцій та підготовка до повноцінного впровадження в роботу.", 
+    "description_en": "Starting May 2026: feedback collection, analytics analysis, feature refinement, and preparation for full-scale implementation.",
+    "image": "assets/images/d5.png", 
+    "status": "future"
+  },
+  {
+    "date": "2027", 
+    "date_en": "2027",
+    "title": "Впровадження та масштабування", 
+    "title_en": "Implementation and Scaling",
+    "description": "Повноцінне розгортання навчальної платформи для всіх", 
+    "description_en": "Full deployment of the learning platform for all users",
+    "image": "assets/images/d6.jpg", 
+    "status": "future"
+  }
+]
+  },
+
+    "research": {
+    "summary": "З 2023 року ми впроваджуємо інноваційні методики навчання першій допомозі для людей з інклюзією. Нами створено методичну базу для інструкторів та адаптовані посібники шрифтом Брайля, що забезпечують доступну освіту для всіх категорій населення.",
+    "summary_en": "Since 2023, we have introduced innovative techniques for teaching first aid in an inclusive environment. We have established a comprehensive methodological base for instructors and distributed Braille educational materials for both adults and children to ensure universal access to life-saving skills.",
+    "months": ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
+    "months_en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "inclusion_data": {
+      "arm": [0, 2, 2, 2, 1, 0, 1, 1, 2, 0, 0, 0],
+      "leg": [1, 0, 2, 5, 3, 6, 4, 0, 1, 2, 1, 9],
+      "ride": [3, 4, 2, 4, 1, 4, 0, 0, 0, 1, 0, 1],
+      "arm_leg": [1, 0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 1],
+      "other": [2, 2, 1, 1, 2, 2, 1, 0, 0, 0, 0, 0]
+    },
+    "photos": [ "assets/images/i1.jpg", "assets/images/i2.jpg", "assets/images/i3.jpg", "assets/images/i4.jpg", "assets/images/i5.jpg"]
+  }
+}
+

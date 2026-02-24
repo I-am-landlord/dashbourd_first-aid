@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аптечки | Medical Supply</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { 
+            --brand-orange: #ED9740; 
+            --brand-blue: #60ABAF; 
+            --brand-dark: #1E293B; 
+            --brand-purple: #8B5CF6;
+            --map-base: #e2e8f0;
+        }
+        
+        body, html { margin: 0; background: #f8fafc; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+        .main-wrapper { display: flex; flex-direction: column; gap: 1.5rem; min-height: 100vh; padding: 1rem; }
+
+        @media (min-width: 1280px) {
+            .main-wrapper { flex-direction: row; height: 100vh; padding: 1.5rem; overflow: hidden; }
+        }
+
+        .map-section {
+            width: 100%; display: flex; flex-direction: column; background: white;
+            border-radius: 2rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;
+        }
+
+        @media (min-width: 1280px) { .map-section { width: 60%; border-radius: 3rem; padding: 2.5rem; } }
+
+        #map-container svg {
+            width: 100%; height: auto; max-height: 50vh; object-fit: contain;
+            filter: drop-shadow(0 10px 25px rgba(0,0,0,0.03)); touch-action: manipulation;
+        }
+
+        @media (min-width: 1280px) { #map-container svg { max-height: 60vh; } }
+
+        .info-panel { width: 100%; display: flex; flex-direction: column; }
+        @media (min-width: 1280px) { .info-panel { width: 40%; height: 100%; } }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; flex-grow: 1; }
+        @media (max-width: 480px) { .kpi-grid { grid-template-columns: 1fr; } }
+
+        .region-label {
+            font-size: 8px; font-weight: 800; fill: #334155; text-transform: uppercase;
+            pointer-events: none; transition: font-size 0.3s ease;
+        }
+
+        path { transition: all 0.3s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+        .area-selected { stroke: none !important; }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <div class="map-section relative">
+            <header class="mb-4">
+                <h1 class="text-2xl md:text-4xl font-black uppercase italic tracking-tighter text-slate-900 leading-none">
+                    <span data-i18n="med.title_main">Забезпечення</span> <span class="text-[#DA291C]" data-i18n="med.title_accent">аптечками</span>
+                </h1>
+                <div class="flex items-center gap-4 mt-3">
+                    <span data-i18n="med.map_subtitle" class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Карта розподілу</span>
+                    <div class="flex gap-1">
+                        <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                        <div class="w-2 h-2 rounded-full bg-[#60ABAF]"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="map-container" class="flex-1 flex items-center justify-center"></div>
+        </div>
+
+        <div class="info-panel">
+            <div class="bg-white rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 shadow-xl border border-slate-100 flex flex-col h-full">
+                <h2 id="reg-name" class="text-2xl md:text-3xl font-black uppercase italic mb-2 tracking-tighter text-slate-800">...</h2>
+                <p id="reg-desc" class="text-slate-400 text-sm leading-relaxed mb-6 md:mb-8 min-h-[3em]"></p>
+                
+                <div class="kpi-grid">
+                    <div class="bg-slate-50 rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 flex flex-col justify-center border border-slate-100/50">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[12px] font-black uppercase text-slate-400" data-i18n="med.vendor_a">Французький ЧХ</span>
+                            <span id="circle-a" class="text-[12px] font-bold text-slate-500 bg-white px-2 py-1 rounded-lg shadow-sm">0%</span>
+                        </div>
+                        <h4 id="val-a" class="text-3xl md:text-4xl font-black italic text-slate-800 leading-none">0</h4>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 flex flex-col justify-center border border-slate-100/50">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[12px] font-black uppercase text-[#60ABAF]" data-i18n="med.vendor_b">Норвезький ЧХ</span>
+                            <span id="circle-b" class="text-[12px] font-bold text-[#60ABAF] bg-white px-2 py-1 rounded-lg shadow-sm">0%</span>
+                        </div>
+                        <h4 id="val-b" class="text-3xl md:text-4xl font-black italic text-[#60ABAF] leading-none">0</h4>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 flex flex-col justify-center border border-slate-100/50">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[12px] font-black uppercase text-[#ED9740]" data-i18n="med.vendor_c">МКЧХ</span>
+                            <span id="circle-c" class="text-[12px] font-bold text-[#ED9740] bg-white px-2 py-1 rounded-lg shadow-sm">0%</span>
+                        </div>
+                        <h4 id="val-c" class="text-3xl md:text-4xl font-black italic text-[#ED9740] leading-none">0</h4>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 flex flex-col justify-center border border-slate-100/50">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[12px] font-black text-[#8B5CF6]" data-i18n="med.vendor_d">МФТЧХтаЧП</span>
+                            <span id="circle-d" class="text-[12px] font-bold text-[#8B5CF6] bg-white px-2 py-1 rounded-lg shadow-sm">0%</span>
+                        </div>
+                        <h4 id="val-d" class="text-3xl md:text-4xl font-black italic text-[#8B5CF6] leading-none">0</h4>
+                    </div>
+                </div>
+
+                <div class="mt-6 md:mt-8 pt-6 border-t border-slate-100 flex justify-between items-end">
+                    <div>
+                        <p class="text-[9px] font-black uppercase text-slate-300 tracking-[0.2em] mb-1" data-i18n="med.total_label">Всього передано:</p>
+                        <h3 id="val-total" class="text-4xl md:text-6xl font-black italic tracking-tighter text-slate-900 leading-none">0</h3>
+                    </div>
+                    <button onclick="resetView()" class="group bg-slate-900 text-white p-4 md:p-5 rounded-2xl md:rounded-3xl hover:bg-[#ED9740] transition-all shadow-lg active:scale-95">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 group-hover:rotate-180 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let medicalData = null;
+        let translations = {};
+        const currentLang = localStorage.getItem('lang') || 'uk';
+
+        async function init() {
+            try {
+                const [mapRes, dataRes, transRes] = await Promise.all([
+                    fetch('../assets/ukraine.svg'),
+                    fetch('../assets/images/data.json'),
+                    fetch('../assets/translations.json')
+                ]);
+                
+                document.getElementById('map-container').innerHTML = await mapRes.text();
+                const allData = await dataRes.json();
+                const allTrans = await transRes.json();
+                
+                medicalData = allData.medical;
+                translations = allTrans[currentLang] || allTrans['uk'];
+
+                applyStaticTranslations();
+                setupMap();
+                resetView();
+            } catch (err) { console.error("Error loading data:", err); }
+        }
+
+        function applyStaticTranslations() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[key]) el.innerText = translations[key];
+            });
+        }
+
+        function changeLanguage(lang) {
+            localStorage.setItem('lang', lang);
+            // Примусово знімаємо блокування перед перезавантаженням
+            document.body.style.overflow = 'auto';
+            window.location.reload();
+}
+        function setupMap() {
+            const container = document.getElementById('map-container');
+            const svg = container.querySelector('svg');
+            if (!svg) return;
+
+            svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+            if (!svg.getAttribute('viewBox')) {
+                const b = svg.getBBox();
+                svg.setAttribute('viewBox', `${b.x} ${b.y} ${b.width} ${b.height}`);
+            }
+
+            medicalData.regions.forEach(reg => {
+                const path = document.getElementById(reg.id);
+                if (path) {
+                    applyInitialStyles(path, reg.total);
+                    const bbox = path.getBBox();
+                    let x = bbox.x + bbox.width / 2;
+                    let y = bbox.y + bbox.height / 2;
+
+                    // Корекція для Києва
+                    if (reg.id === 'UA-32') { x += 20; y -= 15; }
+                    if (reg.id === 'UA-30') { y += 5; }
+
+                    const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                    text.setAttribute("x", x);
+                    text.setAttribute("y", y);
+                    text.setAttribute("class", "region-label");
+                    text.setAttribute("text-anchor", "middle");
+
+                    // Переклад назви для карти
+                    const translatedRegionName = translations[reg.id] || reg.name;
+                    const cleanName = translatedRegionName.replace(" область", "").replace(" Region", "").replace(" region", "");
+
+                    text.innerHTML = `<tspan x="${x}" dy="0" class="uppercase">${cleanName}</tspan>`;
+                    svg.appendChild(text);
+                    
+                    path.onclick = () => selectRegion(reg.id);
+                }
+            });
+        }
+
+        function applyInitialStyles(path, total) {
+            const intensity = Math.min(100, (Math.log1p(total) / Math.log1p(2000)) * 100);
+            path.style.setProperty('fill', `hsl(182, 33%, ${90 - (intensity / 2)}%)`, 'important');
+        }
+
+        function selectRegion(id) {
+            medicalData.regions.forEach(reg => {
+                const p = document.getElementById(reg.id);
+                if (p) {
+                    applyInitialStyles(p, reg.total);
+                    p.classList.remove('area-selected');
+                }
+            });
+
+            const selectedPath = document.getElementById(id);
+            if (selectedPath) {
+                selectedPath.style.setProperty('fill', 'var(--brand-orange)', 'important');
+                selectedPath.classList.add('area-selected');
+            }
+
+            const reg = medicalData.regions.find(r => r.id === id);
+            if (reg) {
+                const name = translations[reg.id] || reg.name;
+                const info = (currentLang === 'en' && reg.info_en) ? reg.info_en : reg.info;
+                updatePanel(name, info, reg.details, reg.total);
+                
+                if (window.innerWidth < 1280) {
+                    document.querySelector('.info-panel').scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        function resetView() {
+            medicalData.regions.forEach(reg => {
+                const p = document.getElementById(reg.id);
+                if (p) {
+                    applyInitialStyles(p, reg.total);
+                    p.classList.remove('area-selected');
+                }
+            });
+            const g = medicalData.global_stats;
+            const title = translations["med.global_title"] || "Україна";
+            const desc = translations["med.global_desc"] || g.description;
+            
+            updatePanel(title, desc, {
+                type_a: g.type_a, type_b: g.type_b, type_c: g.type_c, type_d: g.type_d || 0
+            }, g.total);
+        }
+
+        function updatePanel(name, desc, details, total) {
+            document.getElementById('reg-name').innerText = name;
+            document.getElementById('reg-desc').innerText = desc;
+            document.getElementById('val-a').innerText = details.type_a;
+            document.getElementById('val-b').innerText = details.type_b;
+            document.getElementById('val-c').innerText = details.type_c;
+            document.getElementById('val-d').innerText = details.type_d || 0;
+            document.getElementById('val-total').innerText = total;
+
+            const calcPct = (v) => total > 0 ? Math.round((v / total) * 100) : 0;
+            document.getElementById('circle-a').innerText = calcPct(details.type_a) + '%';
+            document.getElementById('circle-b').innerText = calcPct(details.type_b) + '%';
+            document.getElementById('circle-c').innerText = calcPct(details.type_c) + '%';
+            document.getElementById('circle-d').innerText = calcPct(details.type_d || 0) + '%';
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

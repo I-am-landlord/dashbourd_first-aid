@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UA Events Dashboard | SES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root { --accent-orange: #FF5F05; --accent-red: #DA291C; }
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; font-family: 'Lato', sans-serif; background: #fff; overflow-x: hidden; }
+
+        /* Десктопна сітка */
+        @media (min-width: 1025px) {
+            body { overflow: hidden; }
+            .main-wrapper { height: 100vh; display: grid; grid-template-columns: 1fr 400px; grid-template-rows: 80px 1fr 180px; }
+            header { grid-column: span 2; }
+            #svg-container { grid-row: 2; border-right: 1px solid #f3f4f6; }
+            #info-panel { grid-row: 2; overflow-y: auto; }
+            footer { grid-column: span 2; border-top: 1px solid #f3f4f6; }
+        }
+
+        /* Мобільна сітка */
+        @media (max-width: 1024px) {
+            .main-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+            #svg-container { height: 350px; width: 100%; position: relative; background: #fafafa; }
+            #info-panel { padding:3rem 1.5rem; }
+            footer { padding: 1rem; border-top: 1px solid #eee; margin-top: auto; }
+            header { position: sticky; top: 0; z-index: 50; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        }
+
+        #svg-container { display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 20px; }
+        #svg-container svg { width: 100%; height: 100%; max-height: 90%; }
+
+        /* Стилізація карти */
+        path { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; stroke: #fff; stroke-width: 1; fill: #F1F5F9; }
+        path.selected { fill: #000 !important; stroke: #000; filter: drop-shadow(0 0 15px rgba(0,0,0,0.2)); }
+        path:hover:not(.selected) { stroke: var(--accent-orange); stroke-width: 2; z-index: 10; }
+
+        #map-tooltip { position: fixed; pointer-events: none; background: #000; color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; z-index: 9999; display: none; transform: translate(-50%, -130%); }
+        
+        /* Лайтбокс */
+        #lightbox { background: rgba(0,0,0,0.95); transition: opacity 0.3s ease; }
+        #lightbox.hidden { display: none; opacity: 0; }
+        #lightbox:not(.hidden) { display: flex; opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <div id="map-tooltip"></div>
+
+    <div class="main-wrapper">
+        <header class="bg-white px-6 py-4 flex justify-between items-center">
+            <div class="font-black text-xl tracking-tighter uppercase italic text-gray-900 leading-none">
+                <span data-i18n="ses.title_1">Навчання</span> <span class="text-[#FF5F05]" data-i18n="ses.title_2">ДСНС</span>
+            </div>
+            <button onclick="resetAll()" class="text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full bg-black text-white hover:bg-[#FF5F05] transition-all" data-i18n="train.reset">
+                Вся Україна ↺
+            </button>
+        </header>
+
+        <main id="svg-container"></main>
+
+        <aside id="info-panel" class="bg-white px-8 py-10">
+            <div id="panel-content"></div>
+        </aside>
+
+        <footer class="bg-white flex items-center p-4">
+            <div class="swiper mainSwiper w-full">
+                <div class="swiper-wrapper" id="gal-inner"></div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-5xl z-[110] hover:text-[#FF5F05]">&times;</button>
+        <div class="swiper lightboxSwiper w-full h-full">
+            <div class="swiper-wrapper" id="lightbox-inner"></div>
+            <div class="swiper-button-next !text-white/50 hover:!text-white"></div>
+            <div class="swiper-button-prev !text-white/50 hover:!text-white"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        let db = {}, selId = null, i18n = {};
+        let currentLang = localStorage.getItem('lang') || 'uk';
+        let mainSwiper, lightboxSwiper;
+
+        async function init() {
+            try {
+                // 1. Переклади
+                const langRes = await fetch('../assets/translations.json');
+                const transData = await langRes.json();
+                i18n = transData[currentLang] || transData['uk'];
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (i18n[key]) el.innerHTML = i18n[key];
+                });
+
+                function changeLanguage(lang) {
+                    localStorage.setItem('lang', lang);
+                    // Примусово знімаємо блокування перед перезавантаженням
+                    document.body.style.overflow = 'auto';
+                    window.location.reload();
+}
+
+                // 2. Дані та Карта
+                const [dRes, sRes] = await Promise.all([
+                    fetch('../assets/images/data.json').then(r => r.json()),
+                    fetch('../assets/ukraine.svg').then(r => r.text())
+                ]);
+                
+                db = dRes.analytics.regions;
+                const container = document.getElementById('svg-container');
+                container.innerHTML = sRes;
+                
+                const svg = container.querySelector('svg');
+                if (svg) {
+                    svg.removeAttribute('width'); svg.removeAttribute('height');
+                    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+                }
+
+                setupEvents();
+                initGalleries();
+                refresh();
+            } catch (e) { console.error("Init error:", e); }
+        }
+
+        function getSummed(id) {
+            const r = db[id];
+            let name = i18n[id] || (r ? (currentLang === 'uk' ? r.name_uk : r.name_en) : id);
+            if(!r) return { ev: 0, pp: 0, name };
+            let ev = 0, pp = 0;
+            ['nc', 'region'].forEach(t => {
+                const s = r.stats[t]?.['48m'];
+                if(s) {
+                    ev += (s.comm.events + s.ben.events);
+                    pp += (s.comm.persons + s.ben.persons);
+                }
+            });
+            return { ev, pp, name };
+        }
+
+        function refresh() {
+            let maxP = 0;
+            Object.keys(db).forEach(id => {
+                const s = getSummed(id);
+                if(s.pp > maxP) maxP = s.pp;
+            });
+
+            // Теплий оранжево-червоний градієнт
+            const colors = ["#FFF7ED", "#FFEDD5", "#FED7AA", "#FB923C", "#F97316", "#EA580C", "#9A3412"];
+
+            document.querySelectorAll('path').forEach(p => {
+                const id = p.id.toUpperCase();
+                const s = getSummed(id);
+                const isSelected = (id === selId);
+                p.classList.toggle('selected', isSelected);
+                
+                if(!isSelected) {
+                    if(s.pp > 0) {
+                        const idx = Math.min(Math.floor((s.pp / (maxP || 1)) * 6), 6);
+                        p.style.fill = colors[idx];
+                    } else p.style.fill = "#F9FAFB";
+                } else p.style.fill = "";
+            });
+            renderPanel();
+        }
+
+        function renderPanel() {
+    const content = document.getElementById('panel-content');
+    let name = i18n["train.all_ukraine"] || "Вся Україна", ev = 0, pp = 0;
+
+    if(selId) {
+        const s = getSummed(selId);
+        name = s.name; ev = s.ev; pp = s.pp;
+        
+        // Автоматичний скрол до контенту на мобільних при виборі області
+        if (window.innerWidth <= 1024) {
+            content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    } else {
+        Object.keys(db).forEach(id => {
+            const s = getSummed(id);
+            ev += s.ev; pp += s.pp;
+        });
+    }
+
+    content.innerHTML = `
+        <div class="mb-8">
+            <p class="text-[10px] font-black text-[#FF5F05] uppercase tracking-[0.3em] mb-1" data-i18n="train.analytics_title">
+                ${i18n["train.analytics_title"] || 'Аналітика регіону'}
+            </p>
+            <h2 class="text-3xl font-black uppercase tracking-tighter leading-tight italic text-gray-900">${name}</h2>
+            <div class="h-1 w-12 bg-black mt-3"></div>
+        </div>
+        <div class="space-y-4">
+            <div class="p-6 rounded-3xl bg-gray-950 text-white shadow-2xl shadow-orange-100 relative overflow-hidden">
+                <p class="text-[10px] font-bold uppercase text-gray-500 tracking-widest relative z-10" data-i18n="train.total_reach">
+                    ${i18n["train.total_reach"] || 'Учасники'}
+                </p>
+                <div class="text-5xl font-black mt-1 text-[#FF5F05] relative z-10">${pp.toLocaleString()}</div>
+                <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-[#FF5F05] opacity-10 rounded-full"></div>
+            </div>
+            <div class="p-6 rounded-3xl bg-gray-50 border border-gray-100">
+                <p class="text-[10px] font-bold uppercase text-gray-400 tracking-widest" data-i18n="train.events">
+                    ${i18n["train.events"] || 'Події'}
+                </p>
+                <div class="text-3xl font-black mt-1 text-gray-900">${ev.toLocaleString()}</div>
+            </div>
+        </div>
+    `;
+}
+        function setupEvents() {
+            const tt = document.getElementById('map-tooltip');
+            document.querySelectorAll('path').forEach(p => {
+                p.onclick = () => { 
+                    selId = (selId === p.id.toUpperCase()) ? null : p.id.toUpperCase(); 
+                    refresh(); 
+                };
+                p.onmouseenter = () => {
+                    const s = getSummed(p.id.toUpperCase());
+                    tt.innerText = s.name;
+                    tt.style.display = 'block';
+                };
+                p.onmousemove = (e) => {
+                    tt.style.left = e.clientX + 'px';
+                    tt.style.top = e.clientY + 'px';
+                };
+                p.onmouseleave = () => tt.style.display = 'none';
+            });
+        }
+
+        function initGalleries() {
+            const gal = document.getElementById('gal-inner');
+            const light = document.getElementById('lightbox-inner');
+            const photos = ["s1.jpg", "s2.jpg", "s3.jpg", "s4.jpg", "s5.jpg", "s6.jpg"];
+            
+            photos.forEach((name, i) => {
+                const url = `../assets/images/${name}`;
+                gal.innerHTML += `
+                    <div class="swiper-slide h-28 rounded-2xl overflow-hidden bg-gray-100 shadow-sm transition-transform hover:scale-95">
+                        <img src="${url}" class="w-full h-full object-cover cursor-pointer" onclick="openLightbox(${i})">
+                    </div>`;
+                light.innerHTML += `
+                    <div class="swiper-slide flex items-center justify-center p-0">
+                        <img src="${url}" class="max-w-full max-h-full object-contain">
+                    </div>`;
+            });
+
+            mainSwiper = new Swiper(".mainSwiper", { 
+                slidesPerView: 2.2, 
+                spaceBetween: 15, 
+                breakpoints: { 768: { slidesPerView: 4 }, 1200: { slidesPerView: 6 } } 
+            });
+            lightboxSwiper = new Swiper(".lightboxSwiper", { 
+                slidesPerView: 1, 
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" } 
+            });
+        }
+
+        function openLightbox(i) { 
+            document.getElementById('lightbox').classList.remove('hidden'); 
+            lightboxSwiper.update(); 
+            lightboxSwiper.slideTo(i, 0); 
+        }
+        function closeLightbox() { document.getElementById('lightbox').classList.add('hidden'); }
+        function resetAll() { selId = null; refresh(); }
+        
+        init();
+    </script>
+</body>
+</html>

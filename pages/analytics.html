@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Intelligence Pro | Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --brand-red: #DA291C; --brand-teal: #60ABAF; }
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; }
+        .card { background: white; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .stat-label { font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+        .hidden-panel { display: none !important; }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-10">
+            <div>
+                <h1 class="text-4xl font-black uppercase tracking-tighter italic text-slate-900" data-i18n="analytics.title">
+                    Аналітика <span class="text-[#DA291C]">навчання</span>
+                </h1>
+                <p class="text-gray-500 font-medium" data-i18n="analytics.subtitle">Глобальна аналітика охоплення та ефективності</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-4 w-full md:w-auto">
+                <div class="flex-1 md:w-48">
+                    <label class="stat-label mb-2 block" data-i18n="analytics.filter_team">Команда</label>
+                    <select id="f-team" onchange="updateDashboard()" class="w-full bg-white border-2 border-gray-200 p-2.5 rounded-xl text-xs font-bold shadow-sm outline-none focus:border-[#DA291C]">
+                        <option value="all">Всі (НК + Області)</option>
+                        <option value="nc">Тільки НК</option>
+                        <option value="region">Тільки Області</option>
+                    </select>
+                </div>
+                <div class="flex-1 md:w-48">
+                    <label class="stat-label mb-2 block" data-i18n="analytics.filter_audience">Аудиторія</label>
+                    <select id="f-audience" onchange="updateDashboard()" class="w-full bg-white border-2 border-gray-200 p-2.5 rounded-xl text-xs font-bold shadow-sm outline-none focus:border-[#DA291C]">
+                        <option value="all">Вся аудиторія</option>
+                        <option value="comm">Комерція</option>
+                        <option value="ben">Бенефіціари</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="card border-t-4 border-t-black">
+                <p class="stat-label" data-i18n="analytics.kpi_reach">Охоплення</p>
+                <h2 id="kpi-ppl" class="text-4xl font-black mt-2">0</h2>
+            </div>
+            <div class="card border-t-4 border-t-[#DA291C]">
+                <p class="stat-label" data-i18n="analytics.kpi_events">Заходи</p>
+                <h2 id="kpi-ev" class="text-4xl font-black mt-2 text-[#DA291C]">0</h2>
+            </div>
+            <div id="panel-lift" class="card border-t-4 border-t-[#60ABAF]">
+                <p class="stat-label" data-i18n="analytics.kpi_lift">Ефект підтримки</p>
+                <h2 id="kpi-lift" class="text-4xl font-black mt-2 text-[#60ABAF]">0%</h2>
+            </div>
+            <div class="card border-t-4 border-t-orange-400">
+                <p class="stat-label" data-i18n="analytics.kpi_efficiency">Ефективність</p>
+                <h2 id="kpi-ratio" class="text-4xl font-black mt-2 text-orange-400">0.0</h2>
+                <p class="text-[10px] text-gray-400 mt-1 font-bold italic" data-i18n="analytics.kpi_ratio_unit">людей/захід</p>
+            </div>
+        </div>
+
+        <div id="panel-support-chart" class="mb-8 card">
+            <p class="stat-label mb-6 text-center" data-i18n="analytics.chart_support">Середнє охоплення на область: Підтримка vs Без підтримки</p>
+            <div class="h-[250px] w-full"><canvas id="c-support"></canvas></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div id="panel-pie" class="card">
+                <p class="stat-label mb-6" data-i18n="analytics.chart_sectors">Сектори охоплення</p>
+                <div class="h-[300px] w-full"><canvas id="c-audience"></canvas></div>
+            </div>
+            <div class="card">
+                <p class="stat-label mb-6" data-i18n="analytics.chart_programs">Розподіл за програмами</p>
+                <div class="h-[300px] w-full"><canvas id="c-prog"></canvas></div>
+            </div>
+        </div>
+
+        <div class="card">
+            
+         <div class="card">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+        <p class="stat-label text-center md:text-left" data-i18n="analytics.chart_rank">Топ областей за охопленням (людей)</p>
+        
+        <div id="rank-legend" class="flex gap-4 text-[10px] font-bold uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-sm bg-[#60ABAF]"></span>
+                <span data-i18n="analytics.legend_donor">Підтримка</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-sm bg-[#DA291C]"></span>
+                <span data-i18n="analytics.legend_organic">Органічні</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="h-[600px] w-full relative">
+        <canvas id="c-rank"></canvas>
+    </div>
+</div>
+            
+            <div class="h-[600px] w-full relative">
+                <canvas id="c-rank"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const donorIDs = ["UA-07", "UA-56", "UA-68", "UA-61", "UA-51", "UA-14", "UA-23", "UA-12", "UA-65"];
+        let rawData = {}, charts = {}, i18n = {};
+        let currentLang = localStorage.getItem('lang') || 'uk';
+        let programConfig = {};
+
+        async function init() {
+            try {
+                // 1. Завантаження перекладів
+                const langRes = await fetch('../assets/translations.json');
+                const translations = await langRes.json();
+                i18n = translations[currentLang] || translations['uk'];
+
+                // 2. Налаштування назв програм
+                programConfig = {
+                    "6m":      { label: i18n["analytics.prog_6m"] || "6h", color: "#0F172A" },
+                    "12m":     { label: i18n["analytics.prog_12m"] || "12h", color: "#DA291C" },
+                    "48m":     { label: i18n["analytics.prog_48m"] || "48h", color: "#ED9740" },
+                    "seminar": { label: i18n["analytics.prog_seminar"] || "Seminar", color: "#60ABAF" },
+                    "mk":      { label: i18n["analytics.prog_mk"] || "Master-class", color: "#94A3B8" }
+                };
+
+                // 3. Переклад UI
+                translatePage();
+
+                function changeLanguage(lang) {
+                    localStorage.setItem('lang', lang);
+                    // Примусово знімаємо блокування перед перезавантаженням
+                    document.body.style.overflow = 'auto';
+                    window.location.reload();
+                }
+
+                // 4. Завантаження даних
+                const response = await fetch('../assets/images/data.json');
+                rawData = await response.json();
+                updateDashboard();
+            } catch (e) { console.error("Init error:", e); }
+        }
+
+        function translatePage() {
+            // Текст з data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[key]) el.innerHTML = i18n[key];
+            });
+
+            // Селекти
+            const selects = {
+                'f-team': { 'all': 'analytics.team_all', 'nc': 'analytics.team_nc', 'region': 'analytics.team_region' },
+                'f-audience': { 'all': 'analytics.aud_all', 'comm': 'analytics.aud_comm', 'ben': 'analytics.aud_ben' }
+            };
+
+            Object.entries(selects).forEach(([id, map]) => {
+                const select = document.getElementById(id);
+                Array.from(select.options).forEach(opt => {
+                    if (i18n[map[opt.value]]) opt.text = i18n[map[opt.value]];
+                });
+            });
+        }
+
+        function updateDashboard() {
+            if (!rawData.analytics?.regions) return;
+
+            const teamF = document.getElementById('f-team').value;
+            const audF = document.getElementById('f-audience').value;
+            const isNC = teamF === 'nc';
+
+            let totals = { p: 0, e: 0, commP: 0, benP: 0 };
+            let progStats = {};
+            Object.keys(programConfig).forEach(k => progStats[k] = 0);
+            
+            let rankingData = [];
+            let donorSum = 0, donorCount = 0, organicSum = 0, organicCount = 0;
+
+            Object.entries(rawData.analytics.regions).forEach(([id, region]) => {
+                let rP = 0, rE = 0;
+                const isDonor = donorIDs.includes(id);
+                const teams = teamF === 'all' ? ['nc', 'region'] : [teamF];
+
+                teams.forEach(tKey => {
+                    const stats = region.stats?.[tKey];
+                    if (!stats) return;
+
+                    Object.entries(stats).forEach(([pKey, val]) => {
+                        const cp = Number(val.comm?.persons || 0);
+                        const bp = Number(val.ben?.persons || 0);
+                        const ce = Number(val.comm?.events || 0);
+                        const be = Number(val.ben?.events || 0);
+
+                        let p = 0, e = 0;
+                        if (audF === 'all') { p = cp + bp; e = ce + be; }
+                        else if (audF === 'comm') { p = cp; e = ce; }
+                        else { p = bp; e = be; }
+
+                        rP += p; rE += e;
+                        totals.commP += cp; totals.benP += bp;
+                        if (progStats[pKey] !== undefined) progStats[pKey] += p;
+                    });
+                });
+
+                if (isDonor) { donorSum += rP; donorCount++; } 
+                else { organicSum += rP; organicCount++; }
+
+                totals.p += rP; totals.e += rE;
+                // Назва області з перекладу
+                const name = i18n[id] || (currentLang === 'uk' ? region.name_uk : region.name_en) || id;
+                rankingData.push({ name, val: rP, isDonor });
+            });
+
+            // UI Visibility
+            document.getElementById('panel-lift').classList.toggle('hidden-panel', isNC);
+            document.getElementById('panel-support-chart').classList.toggle('hidden-panel', isNC);
+            document.getElementById('panel-pie').classList.toggle('hidden-panel', audF !== 'all');
+
+            // KPI Update
+            document.getElementById('kpi-ppl').innerText = totals.p.toLocaleString();
+            document.getElementById('kpi-ev').innerText = totals.e.toLocaleString();
+            document.getElementById('kpi-ratio').innerText = totals.e > 0 ? (totals.p / totals.e).toFixed(1) : "0.0";
+            
+            let supportInfo = null;
+            if (!isNC) {
+                const avgD = donorSum / (donorCount || 1);
+                const avgO = organicSum / (organicCount || 1);
+                const lift = avgO > 0 ? Math.max(0, Math.round(((avgD / avgO) - 1) * 100)) : 0;
+                document.getElementById('kpi-lift').innerText = "+" + lift + "%";
+                supportInfo = { avgD, avgO };
+            }
+                        // Всередині функції updateDashboard(), після KPI Update:
+            const legend = document.getElementById('rank-legend');
+            if (legend) {
+                legend.classList.toggle('hidden', isNC);
+}
+
+            renderCharts(progStats, totals, rankingData, supportInfo, isNC, audF);
+        }
+
+        function renderCharts(progStats, totals, ranking, support, isNC, audF) {
+            Object.values(charts).forEach(c => c.destroy());
+            const opt = { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                plugins: { 
+                    legend: { position: 'bottom', labels: { font: { family: 'Inter', weight: '700', size: 10 } } } 
+                } 
+            };
+
+            if (!isNC && support) {
+                charts.support = new Chart(document.getElementById('c-support'), {
+                    type: 'bar',
+                    data: {
+                        labels: [i18n['analytics.support_no'], i18n['analytics.support_yes']],
+                        datasets: [{ data: [support.avgO, support.avgD], backgroundColor: ['#E2E8F0', '#60ABAF'], borderRadius: 8 }]
+                    },
+                    options: { ...opt, plugins: { legend: { display: false } } }
+                });
+            }
+
+            if (audF === 'all') {
+                charts.aud = new Chart(document.getElementById('c-audience'), {
+                    type: 'pie',
+                    data: {
+                        labels: [i18n['analytics.aud_comm'], i18n['analytics.aud_ben']],
+                        datasets: [{ data: [totals.commP, totals.benP], backgroundColor: ['#0F172A', '#60ABAF'], borderWidth: 0 }]
+                    },
+                    options: opt
+                });
+            }
+
+            charts.prog = new Chart(document.getElementById('c-prog'), {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(progStats).map(k => programConfig[k].label),
+                    datasets: [{ data: Object.values(progStats), backgroundColor: Object.keys(progStats).map(k => programConfig[k].color), borderWidth: 0 }]
+                },
+                options: { ...opt, cutout: '70%' }
+            });
+
+            const sorted = [...ranking].sort((a,b) => b.val - a.val).filter(i => i.val > 0);
+            charts.rank = new Chart(document.getElementById('c-rank'), {
+                type: 'bar',
+                data: {
+                    labels: sorted.map(i => i.name),
+                    datasets: [{
+                        label: i18n['analytics.label_participants'],
+                        data: sorted.map(i => i.val),
+                        backgroundColor: sorted.map(i => (!isNC && i.isDonor) ? '#60ABAF' : '#DA291C'),
+                        borderRadius: 4, barThickness: 12
+                    }]
+                },
+                options: { 
+                    indexAxis: 'y', ...opt, 
+                    scales: { 
+                        x: { beginAtZero: true, grid: { display: false } }, 
+                        y: { grid: { display: false }, ticks: { font: { size: 9, weight: 'bold' } } } 
+                    }, 
+                    plugins: { legend: { display: false } } 
+                }
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>
