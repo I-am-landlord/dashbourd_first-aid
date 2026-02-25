@@ -272,7 +272,7 @@
     "geo.label_kits": "Kits",
     "geo.all_ukraine": "All Ukraine",
     "geo.global_title": "Ukraine",
-    "geo.global_desc": "Henry – First Aid for Children” aims to teach children first aid from an early age in preschool settings.",
+    "geo.global_desc": "The educational program “Henry – First Aid for Children” aims to teach children first aid from an early age in preschool settings.",
     "med.title_main": "Provision of",
     "med.title_accent": "First Aid Kits",
     "med.map_subtitle": "Distribution Map",
@@ -322,4 +322,5 @@
   }
 
 }
+
 
