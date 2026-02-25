@@ -262,7 +262,7 @@
     "analytics.support_yes": "With Support",
     "analytics.label_participants": "Participants",
     "analytics.legend_donor": "With Support",
-    "analytics.legend_organic": "Organic",
+    "analytics.legend_organic": "Non-donor supported",
     "geo.project": "Project",
     "geo.project.genry":"Genry",
     "geo.status_done": "Completed",
@@ -320,4 +320,5 @@
     "res.cat_other": "Other",
     "train.analytics_title": "Regional Analytics"
   }
+
 }
