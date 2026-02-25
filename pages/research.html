@@ -118,7 +118,7 @@
 
                 // 2. Контент із JSON
                 document.getElementById('summary-text').innerText = (currentLang === 'en' && data.summary_en) ? data.summary_en : data.summary;
-                document.getElementById('highlight-tag').innerText = (currentLang === 'en' && data.highlight_stats_en) ? data.highlight_stats_en : data.highlight_stats;
+   
 
                 // 3. Слайдери
                 const swiperWrapper = document.getElementById('swiper-wrapper');
@@ -175,4 +175,5 @@
 </body>
 
 </html>
+
 
