@@ -2773,7 +2773,7 @@
     "title": "Аналітика та проектування", 
     "title_en": "Analytics and Design",
     "description": "Проаналізовано потреби та необхідний функціонал навчальної платформи, досвід національних товариств та офіційний старт проекту", 
-    "description_en": "Analyzed requirements and necessary functionality of the learning platform, experience of national societies, and official project launch",
+    "description_en": "The needs and required functionality of the learning platform were analysed, along with the experience of national societies, and the project was officially launched.",
     "image": "assets/images/d1.jpg", 
     "status": "done"
   },
@@ -2783,7 +2783,7 @@
     "title": "Discovery Phase", 
     "title_en": "Discovery Phase",
     "description": "Протягом квітня-червня було проведено дослідження потреб та технічних можливостей", 
-    "description_en": "Needs and technical capabilities research was conducted during April-June",
+    "description_en": "Between April and June, research was conducted on needs and technical capabilities.",
     "image": "assets/images/d2.jpg", 
     "status": "done"
   },
@@ -2793,7 +2793,7 @@
     "title": "Контент", 
     "title_en": "Content",
     "description": "З вересня 2024 по вересень 2025 була проведена значна робота зі створення контенту для наповнення тренінгів відео та картинками", 
-    "description_en": "Significant work was carried out from September 2024 to September 2025 on content creation, including videos and images for training materials",
+    "description_en": "From September 2024 to September 2025, significant work was carried out to create content, including videos and images for training materials.",
     "image": "assets/images/d3.jpg", 
     "status": "done"
   },
@@ -2803,7 +2803,7 @@
     "title": "Створення навчальної платформи", 
     "title_en": "Learning Platform Development",
     "description": "З вересня 2025 року ведеться активна фаза розробки навчальної платформи та наповнення її контентом. Навчання адміністраторів.", 
-    "description_en": "Active development of the learning platform and content population has been underway since September 2025. Administrator training.",
+    "description_en": "Since September 2025, the active phase of developing the learning platform and creating content has been underway. Administrator training is ongoing.",
     "image": "assets/images/d4.jpg", 
     "status": "active"
   },
@@ -2813,7 +2813,7 @@
     "title": "Пілотування", 
     "title_en": "Piloting",
     "description": "З травня 2026 збір відгуків, аналіз аналітики, доопрацювання функцій та підготовка до повноцінного впровадження в роботу.", 
-    "description_en": "Starting May 2026: feedback collection, analytics analysis, feature refinement, and preparation for full-scale implementation.",
+    "description_en": "Starting May 2026: feedback collection, analytics review, feature refinement, and preparation for full‑scale implementation.",
     "image": "assets/images/d5.png", 
     "status": "future"
   },
@@ -2822,8 +2822,8 @@
     "date_en": "2027",
     "title": "Впровадження та масштабування", 
     "title_en": "Implementation and Scaling",
-    "description": "Повноцінне розгортання навчальної платформи для всіх", 
-    "description_en": "Full deployment of the learning platform for all users",
+    "description": "Повноцінне розгортання навчальної платформи", 
+    "description_en": "Full deployment of the learning platform",
     "image": "assets/images/d6.jpg", 
     "status": "future"
   }
@@ -2832,7 +2832,7 @@
 
     "research": {
     "summary": "З 2023 року ми впроваджуємо інноваційні методики навчання першій допомозі для людей з інклюзією. Нами створено методичну базу для інструкторів та адаптовані посібники шрифтом Брайля, що забезпечують доступну освіту для всіх категорій населення.",
-    "summary_en": "Since 2023, we have introduced innovative techniques for teaching first aid in an inclusive environment. We have established a comprehensive methodological base for instructors and distributed Braille educational materials for both adults and children to ensure universal access to life-saving skills.",
+    "summary_en": "Since 2023, we have been implementing innovative methods of teaching first aid in an inclusive environment. We have developed a comprehensive methodological framework for instructors and created adapted Braille manuals for both adults and children, ensuring accessible first aid education for all population groups.",
     "months": ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
     "months_en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     "inclusion_data": {
