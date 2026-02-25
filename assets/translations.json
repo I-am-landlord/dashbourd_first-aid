@@ -70,7 +70,7 @@
     "UA-74": "Чернігівська область",
     "UA-77": "Чернівецька область",
     "UA-30": "Київ",
-    "train.all_ukraine":"Вся Україна",
+    "train.all_ukraine":"По Україні в цілому",
     "ses.title_1": "Навчання",
     "ses.title_2": "ДСНС",
     "analytics.title": "Аналітика <span class=\"text-[#DA291C]\">навчання</span>",
@@ -87,11 +87,11 @@
     "analytics.kpi_events": "Заходи",
     "analytics.kpi_lift": "Ефект підтримки",
     "analytics.kpi_efficiency": "Ефективність",
-    "analytics.kpi_ratio_unit": "людей/захід",
+    "analytics.kpi_ratio_unit": "осіб/захід",
     "analytics.chart_support": "Середнє охоплення на область: Підтримка vs Без підтримки",
     "analytics.chart_sectors": "Сектори охоплення",
     "analytics.chart_programs": "Розподіл за програмами",
-    "analytics.chart_rank": "Топ областей за охопленням (людей)",
+    "analytics.chart_rank": "Топ областей за охопленням (осіб)",
     "analytics.prog_6m": "6 годинний",
     "analytics.prog_12m": "12 годинний",
     "analytics.prog_48m": "48 годинний",
@@ -109,7 +109,7 @@
     "geo.label_schools": "Закладів",
     "geo.label_children": "Дітей",
     "geo.label_kits": "Наборів",
-    "geo.all_ukraine": "Вся Україна",
+    "geo.all_ukraine": "По Україні в цілому",
     "geo.global_title": "Україна",
     "geo.global_desc": "Навчальна програма «Генрі - перша допомога для дітей» спрямована на навчання дітей першій допомозі вже у ранньому віці в закладах дошкільної освіти.",
     "med.title_main": "Забезпечення",
@@ -231,7 +231,7 @@
     "UA-74": "Chernihiv Region",
     "UA-77": "Chernivtsi Region",
     "UA-30": "Kyiv",
-    "train.all_ukraine": "All Ukraine",
+    "train.all_ukraine": "Аt the national level",
     "ses.title_1": "SES",
     "ses.title_2": "Trainings",
     "analytics.title": "Training <span class=\"text-[#DA291C]\">Analytics</span>",
@@ -270,7 +270,7 @@
     "geo.label_schools": "Schools",
     "geo.label_children": "Children",
     "geo.label_kits": "Kits",
-    "geo.all_ukraine": "All Ukraine",
+    "geo.all_ukraine": "Аt the national level",
     "geo.global_title": "Ukraine",
     "geo.global_desc": "The educational program “Henry – First Aid for Children” aims to teach children first aid from an early age in preschool settings.",
     "med.title_main": "Provision of",
@@ -322,5 +322,6 @@
   }
 
 }
+
 
 
