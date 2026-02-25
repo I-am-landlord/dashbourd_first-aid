@@ -10,45 +10,61 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://bumbu.me/svg-pan-zoom/dist/svg-pan-zoom.min.js"></script>
     <style>
-        :root { --brand-red: #DA291C; --brand-teal: #60ABAF; --brand-orange: #ED9740; --brand-black: #0F0F0F; }
-        body { font-family: 'Lato', sans-serif; color: var(--brand-black); background: #fff; margin: 0; }
-        .app-grid { display: grid; grid-template-columns: 300px 1fr 400px; grid-template-rows: 72px 1fr 160px; height: 100vh; }
+:root { --brand-red:#DA291C; --brand-teal:#60ABAF; --brand-orange:#ED9740; --brand-black:#0F0F0F; }
+html, body { height:100%; margin:0; font-family:'Lato',sans-serif; color:var(--brand-black); background:#fff; }
+.mainSwiper img, .fullSwiper img { user-select:none; -webkit-user-drag:none; pointer-events:none; }
+#sidebar-filters, #sidebar-filters * { pointer-events:auto!important; }
+#svg-container { position:relative; width:100%; height:100%; background:#fcfcfc; }
+#svg-container svg { width:100%; height:100%; display:block; }
+path { transition:fill .25s ease; stroke:#fff; stroke-width:.7; fill:#f1f5f9; cursor:pointer; }
+path.selected { stroke:var(--brand-black); stroke-width:3; }
+path.is-dimmed { opacity:.35; pointer-events:none; }
+.owner-btn.active-orange { background:var(--brand-orange); color:#fff; border-color:var(--brand-orange); }
+.owner-btn.active-teal { background:var(--brand-teal); color:#fff; border-color:var(--brand-teal); }
+.prog-btn.prog-active { border-color:var(--brand-red); background-color:#FFF0F0; }
+input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:900; color:var(--brand-red); }
+.map-label { font-size:10px; font-weight:700; fill:#0F0F0F; pointer-events:none; text-anchor:middle; }
+#gallery-modal { position:fixed; inset:0; background:rgba(0,0,0,.95); z-index:5000; display:none; }
+#gallery-modal.active { display:flex; }
+.fullSwiper { width:100%; height:100%; }
+.fullSwiper .swiper-slide { display:flex; align-items:center; justify-content:center; }
+.fullSwiper img { max-width:100%; max-height:100%; object-fit:contain; }
 
-        @media (max-width: 1024px) {
-            .app-grid { display: flex; flex-direction: column; height: auto; }
-            header { position: sticky; top: 0; z-index: 1000; height: 72px; background: white; border-bottom: 1px solid #eee; }
-            #svg-container { order: 1; height: 50vh; min-height: 400px; position: relative; background: #fcfcfc; }
-            #info-panel { order: 2; border: none; padding: 40px 24px; }
-            #sidebar-filters {
-                position: fixed; top: 0; left: -100%; bottom: 0; width: 300px;
-                z-index: 3000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 20px 0 50px rgba(0,0,0,0.2); background: white;
-            }
-            #sidebar-filters.active { left: 0; }
-        }
+@media(min-width:1025px){
+  body{overflow:hidden;}
+  .app-grid{display:grid; grid-template-columns:300px minmax(0,1fr) 400px; grid-template-rows:72px minmax(0,1fr) 160px; height:100vh;}
+  footer{display:flex; align-items:center; overflow:hidden;}
+  .mainSwiper{width:100%; height:100%;}
+}
+@media(max-width:1024px){
+  .app-grid{display:flex; flex-direction:column; height:auto;}
+  header{position:sticky; top:0; z-index:1000; height:72px; background:#fff; border-bottom:1px solid #eee;}
+  #svg-container{height:55vh; min-height:340px; max-height:420px;}
+  .zoom-controls{display:none!important;}
+  #sidebar-filters{position:fixed; inset:0 auto 0 -100%; width:300px; background:#fff; z-index:3000; transition:.35s ease; box-shadow:20px 0 50px rgba(0,0,0,.25);}
+  #sidebar-filters.active{left:0;}
+  #info-panel{padding:24px; border-left:none;}
+  footer{padding-bottom:24px;}
+  .mainSwiper{height:120px;}
+}
+@media(min-width:1025px){
+  body{overflow:hidden;}
+  .app-grid{display:grid; grid-template-columns:300px minmax(0,1fr) 400px; grid-template-rows:72px minmax(0,1fr) 160px; height:100vh;}
+  footer{display:flex; align-items:center; overflow:hidden;}
+  .mainSwiper{width:100%; height:100%;}
+}
+@media(max-width:1024px){
+  .app-grid{display:flex; flex-direction:column; height:auto;}
+  header{position:sticky; top:0; z-index:1000; height:72px; background:#fff; border-bottom:1px solid #eee;}
+  #svg-container{height:55vh; min-height:340px; max-height:420px;}
+  .zoom-controls{display:none!important;}
+  #sidebar-filters{position:fixed; inset:0 auto 0 -100%; width:300px; background:#fff; z-index:3000; transition:.35s ease; box-shadow:20px 0 50px rgba(0,0,0,.25);}
+  #sidebar-filters.active{left:0;}
+  #info-panel{padding:24px; border-left:none;}
+  footer{padding-bottom:24px;}
+  .mainSwiper{height:120px;}
+}
 
-        #svg-container svg { width: 100%; height: 100%; display: block; touch-action: none; }
-        path { transition: all 0.3s ease; stroke: #fff; stroke-width: 0.7; fill: #f1f5f9; cursor: pointer; }
-        path.selected { stroke: var(--brand-black); stroke-width: 3; filter: drop-shadow(0 0 8px rgba(0,0,0,0.15)); }
-        path.is-dimmed { opacity: 1; pointer-events: none; }
-
-        .zoom-controls { position: absolute; bottom: 20px; right: 20px; display: none; flex-direction: column; gap: 8px; z-index: 100; }
-        @media (max-width: 1024px) { .zoom-controls { display: flex; } }
-        .zoom-btn { width: 48px; height: 48px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #eee; }
-
-        .prog-active { background: var(--brand-black) !important; color: white !important; }
-        .owner-btn.active-orange { background: var(--brand-orange); color: white; border-color: var(--brand-orange); }
-        .owner-btn.active-teal { background: var(--brand-teal); color: white; border-color: var(--brand-teal); }
-        footer {
-            margin-bottom: 0px !important; 
-        }
-        #gallery-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 5000; display: none; flex-direction: column; margin-bottom: 10px; }
-        .fullSwiper { width: 100%; height: 100%; }
-        .fullSwiper .swiper-slide { display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .fullSwiper img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 12px; }
-
-        #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 2500; display: none; backdrop-filter: blur(4px); }
-        #overlay.active { display: block; }
     </style>
 </head>
 <body class="lg:overflow-hidden">
@@ -76,6 +92,7 @@
         </header>
 
         <aside id="sidebar-filters" class="p-10 flex flex-col gap-10 overflow-y-auto border-r">
+              
             <section>
                 <h3 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] mb-6" data-i18n="train.filter_team">Команда</h3>
                 <div class="space-y-2">
@@ -128,12 +145,12 @@
 
         <aside id="info-panel" class="p-12 overflow-y-auto border-l bg-white"></aside>
 
-        <footer class="p-8 border-t col-span-full bg-white mb-36">
-            <div class="swiper mainSwiper">
-                <div class="swiper-wrapper" id="gal-inner"></div>
-            </div>
-        </footer>
-    </div>
+<footer class="col-span-full bg-white border-t p-4">
+  <div class="swiper mainSwiper">
+    <div class="swiper-wrapper" id="gal-inner"></div>
+  </div>
+</footer>
+        </div>
 
     <script>
         let db = {}, selId = null, owner = null, prog = null, activeTeam = 'all', activeDonors = ['all'], pz;
@@ -183,14 +200,33 @@
             const svgEl = container.querySelector('svg');
 
             const initZoom = () => {
-                const isMobile = window.innerWidth <= 1024;
-                if(pz) pz.destroy();
-                pz = svgPanZoom(svgEl, {
-                    zoomEnabled: isMobile,
-                    panEnabled: isMobile,
-                    dblClickZoomEnabled: false, fit: true, center: true, minZoom: 1, maxZoom: 10
-                });
-            };
+                    const isMobile = window.innerWidth <= 1024;
+
+                    if (pz) pz.destroy();
+
+                    if (isMobile) {
+                        // ❌ НІЯКОГО ZOOM НА МОБІЛЬНОМУ
+                        pz = svgPanZoom(svgEl, {
+                        zoomEnabled: false,
+                        panEnabled: false,
+                        controlIconsEnabled: false,
+                        dblClickZoomEnabled: false,
+                        fit: true,
+                        center: true
+                        });
+                    } else {
+                        // ✅ DESKTOP
+                        pz = svgPanZoom(svgEl, {
+                        zoomEnabled: true,
+                        panEnabled: true,
+                        dblClickZoomEnabled: false,
+                        fit: true,
+                        center: true,
+                        minZoom: 1,
+                        maxZoom: 1
+                        });
+                    }
+                    };
 
             initZoom();
             window.addEventListener('resize', initZoom);
@@ -217,6 +253,7 @@
 
         function openFullImage(idx) {
             document.getElementById('gallery-modal').style.display = 'flex';
+            fullSwiperInstance.params.loop = true;
             fullSwiperInstance.update();
             fullSwiperInstance.slideTo(idx, 0);
             document.body.style.overflow = 'hidden';
@@ -283,6 +320,15 @@
                     }
                 }
             });
+
+            if (window.innerWidth <= 1024) {
+  const sidebar = document.getElementById('sidebar-filters');
+  const closeBtn = document.getElementById('close-filters');
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+  });
+}
             renderPanel(currentStats);
         }
 
@@ -427,18 +473,95 @@
             window.requestAnimationFrame(step);
         }
 
-        function initEvents() {
-            document.getElementById('svg-container').addEventListener('click', e => {
-                const p = e.target.closest('path');
-                if (p && !p.classList.contains('is-dimmed')) { selId = (selId === p.id.toUpperCase()) ? null : p.id.toUpperCase(); refresh(); }
-            });
-            document.querySelectorAll('.prog-btn').forEach(b => b.onclick = function() {
-                prog = (prog === this.dataset.val) ? null : this.dataset.val;
-                document.querySelectorAll('.prog-btn').forEach(x => x.classList.toggle('prog-active', x.dataset.val === prog));
+       // ================== INIT EVENTS ==================
+function initEvents() {
+    const svgContainer = document.getElementById('svg-container');
+    if(svgContainer) {
+        svgContainer.addEventListener('click', e => {
+            const p = e.target.closest('path');
+            if (p && !p.classList.contains('is-dimmed')) {
+                selId = (selId === p.id.toUpperCase()) ? null : p.id.toUpperCase();
                 refresh();
-            });
-        }
+            }
+        });
+    }
 
+    document.querySelectorAll('.prog-btn').forEach(b => {
+        b.addEventListener('click', function() {
+            prog = (prog === this.dataset.val) ? null : this.dataset.val;
+            document.querySelectorAll('.prog-btn').forEach(x => x.classList.toggle('prog-active', x.dataset.val === prog));
+            refresh();
+        });
+    });
+
+    // Мобільна кнопка "Скинути ↺" нижче фільтрів
+    const resetBtnMobile = document.getElementById('reset-btn-mobile');
+    if(resetBtnMobile) {
+        resetBtnMobile.addEventListener('click', resetAll);
+    }
+}
+
+// ================== RESET ALL ==================
+function resetAll() {
+    selId = null;
+    owner = null;
+    prog = null;
+    activeTeam = 'all';
+    activeDonors = ['all'];
+
+    // Відновлюємо чекбокси
+    document.querySelectorAll('.sup-check').forEach(c => c.checked = (c.value === 'all'));
+    document.querySelectorAll('.prog-btn').forEach(b => b.classList.remove('prog-active'));
+    document.querySelectorAll('.owner-btn').forEach(b => b.classList.remove('active-orange', 'active-teal'));
+
+    // Якщо pz існує (svgPanZoom)
+    if(pz) { pz.resetZoom(); pz.center(); }
+
+    refresh();
+}
+
+// ================== REFRESH ==================
+function refresh() {
+    // Перевіряємо, чи svg-container реально існує
+    const svgContainer = document.getElementById('svg-container');
+    if(!svgContainer) return;
+
+    let maxP = 0;
+    const currentStats = {};
+
+    Object.keys(db).forEach(id => {
+        const s = getStats(id);
+        currentStats[id] = s;
+        if(s && s.totalP > maxP) maxP = s.totalP;
+    });
+
+    svgContainer.querySelectorAll('path').forEach(path => {
+        const id = path.id.toUpperCase();
+        const s = currentStats[id];
+        path.classList.toggle('selected', id === selId);
+
+        if (!s || (s.totalP === 0 && activeTeam !== 'all' && !db[id]?.stats[activeTeam])) {
+            path.style.fill = '#f8fafc';
+            path.classList.add('is-dimmed');
+        } else {
+            path.classList.remove('is-dimmed');
+            if (s.totalP === 0) path.style.fill = '#f1f5f9';
+            else {
+                const ratio = s.totalP / (maxP || 1);
+                const colors = owner === 'beneficiary' ? ['#A8D0D2','#60ABAF','#2D5A5C'] : ['#F6C697','#ED9740','#A35A1A'];
+                path.style.fill = ratio < 0.33 ? colors[0] : (ratio < 0.66 ? colors[1] : colors[2]);
+            }
+        }
+    });
+
+    renderPanel(currentStats);
+}
+
+// ================== МІСЦЕ ДЛЯ КНОПКИ "СКИНУТИ ↺" НА МОБІЛЬНИХ ==================
+/* 
+В HTML додай кнопку у sidebar нижче фільтрів:
+<button id="reset-btn-mobile" class="block w-full mt-6 px-6 py-3 text-sm font-black text-white bg-red-600 rounded-2xl lg:hidden">Скинути ↺</button>
+*/
         function toggleMenu() { document.getElementById('sidebar-filters').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
         function setOwner(o) {
             owner = (owner === o) ? null : o;
