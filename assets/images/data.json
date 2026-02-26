@@ -2640,7 +2640,47 @@
             }
           }
         }
+      },
+      "UA-43": {
+    "name_uk": "Крим",
+    "team": "mixed",
+    "stats": {
+      "nc": {
+        "6m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "12m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "seminar": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "mk": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } }
+      },
+      "region": {
+        "6m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "12m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "seminar": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "mk": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } }
       }
+    }
+  },
+  "UA-09": {
+    "name_uk": "Луганська",
+    "team": "mixed",
+    "stats": {
+      "nc": {
+        "6m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "12m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "seminar": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "mk": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } }
+      },
+      "region": {
+        "6m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "12m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "seminar": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+        "mk": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } }
+      }
+    }
+  }
     }
   },
 
