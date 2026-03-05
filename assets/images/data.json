@@ -2871,8 +2871,8 @@
   },
 
     "research": {
-    "summary": "З 2023 року ми впроваджуємо інноваційні методики навчання першій допомозі для людей з інклюзією. Нами створено методичну базу для інструкторів та адаптовані посібники шрифтом Брайля, що забезпечують доступну освіту для всіх категорій населення.",
-    "summary_en": "Since 2023, we have been implementing innovative methods of teaching first aid in an inclusive environment. We have developed a comprehensive methodological framework for instructors and created adapted Braille manuals for both adults and children, ensuring accessible first aid education for all population groups.",
+    "summary": "З 2023 року, завдяки підтримці Французького Червоного Хреста, ми системно розвиваємо інклюзивні методики навчання першій допомозі. Створена нами методична база для інструкторів та посібники шрифтом Брайля відкривають можливість отримати знання всім, хто їх потребує.",
+    "summary_en": "Since 2023, thanks to the support of the French Red Cross, we have been systematically developing inclusive first aid training methodologies. The methodological framework for instructors and the Braille manuals we created provide everyone in need with the opportunity to gain these essential skills.",
     "months": ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
     "months_en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     "inclusion_data": {
