@@ -157,7 +157,10 @@
     "res.cat_ride": "Крісло колісне",
     "res.cat_multi": "Множинні",
     "res.cat_other": "Інше",
-    "train.analytics_title": "Аналітика регіону"
+    "train.analytics_title": "Аналітика регіону",
+    "rd.description": "Завдяки вагомій підтримці Французького Червоного Хреста ми розгортаємо створення сучасної цифрової навчальної платформи з навчання навичкам надання першої допомоги, що відкриватиме доступ до якісних знань для кожного.",
+    "ev.text": "Підтримка",
+"train.regions_desc": "Підтримка Французького Червоного Хреста, Норвезького Червоного Хреста та Міжнародного комітету Червоного Хреста дала можливість реалізувати 48-годинну програму тренінгів із пересертифікації для особового складу ДСНС «Перший на місці події», охопивши більшість областей України."
     
   },
   "en": {
@@ -318,10 +321,14 @@
     "res.cat_ride": "Wheelchair",
     "res.cat_multi": "Multiple",
     "res.cat_other": "Other",
-    "train.analytics_title": "Regional Analytics"
+    "train.analytics_title": "Regional Analytics",
+    "rd.description": "Thanks to the significant support of the French Red Cross, we are launching the creation of a modern digital learning platform for teaching first aid skills, which will provide access to quality knowledge for everyone.",
+    "ev.text": "Support",
+    "train.regions_desc": "The support of the French Red Cross, Norwegian Red Cross, and International Committee of the Red Cross has enabled the implementation of a 48-hour training program for the recertification of the State Emergency Service personnel 'First on the Scene', covering most regions of Ukraine."
   }
 
 }
+
 
 
 
