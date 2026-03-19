@@ -1,6 +1,6 @@
 {
   "analytics": {
-    "regions": {
+      "regions": {
       "UA-05": {
         "name_uk": "Вінницька",
         "team": "mixed",
@@ -71,10 +71,10 @@
             "12m": {
               "comm": {
                 "events": 2,
-                "persons": 32
+                "persons": 31
               },
               "ben": {
-                "events": 31,
+                "events": 0,
                 "persons": 0
               }
             },
@@ -94,7 +94,7 @@
                 "persons": 20
               },
               "ben": {
-                "events": 20,
+                "events": 1,
                 "persons": 13
               }
             },
@@ -295,7 +295,7 @@
               },
               "ben": {
                 "events": 12,
-                "persons": 183
+                "persons": 179
               }
             },
             "48m": {
@@ -304,8 +304,8 @@
                 "persons": 0
               },
               "ben": {
-                "events": 4,
-                "persons": 77
+                "events": 3,
+                "persons": 45
               }
             },
             "seminar": {
@@ -414,8 +414,8 @@
                 "persons": 0
               },
               "ben": {
-                "events": 0,
-                "persons": 0
+                "events": 1,
+                "persons": 13
               }
             },
             "seminar": {
@@ -488,8 +488,8 @@
             },
             "mk": {
               "comm": {
-                "events": 0,
-                "persons": 0
+                "events": 2,
+                "persons": 57
               },
               "ben": {
                 "events": 2,
@@ -614,8 +614,8 @@
                 "persons": 64
               },
               "ben": {
-                "events": 64,
-                "persons": 7
+                "events": 9,
+                "persons": 103
               }
             },
             "12m": {
@@ -624,8 +624,8 @@
                 "persons": 0
               },
               "ben": {
-                "events": 0,
-                "persons": 1
+                "events": 1,
+                "persons": 8
               }
             },
             "48m": {
@@ -635,7 +635,7 @@
               },
               "ben": {
                 "events": 4,
-                "persons": 140
+                "persons": 154
               }
             },
             "seminar": {
@@ -655,7 +655,7 @@
               },
               "ben": {
                 "events": 0,
-                "persons": 90
+                "persons": 2660
               }
             }
           }
@@ -855,7 +855,7 @@
               },
               "ben": {
                 "events": 6,
-                "persons": 179
+                "persons": 226
               }
             },
             "seminar": {
@@ -928,8 +928,8 @@
             },
             "mk": {
               "comm": {
-                "events": 16,
-                "persons": 339
+                "events": 1,
+                "persons": 27
               },
               "ben": {
                 "events": 1,
@@ -999,17 +999,17 @@
             "6m": {
               "comm": {
                 "events": 87,
-                "persons": 1159
+                "persons": 1059
               },
               "ben": {
                 "events": 57,
-                "persons": 769
+                "persons": 985
               }
             },
             "12m": {
               "comm": {
                 "events": 6,
-                "persons": 65
+                "persons": 76
               },
               "ben": {
                 "events": 12,
@@ -1022,28 +1022,28 @@
                 "persons": 0
               },
               "ben": {
-                "events": 10,
-                "persons": 147
+                "events": 11,
+                "persons": 167
               }
             },
             "seminar": {
               "comm": {
                 "events": 9,
-                "persons": 243
+                "persons": 286
               },
               "ben": {
                 "events": 19,
-                "persons": 507
+                "persons": 600
               }
             },
             "mk": {
               "comm": {
-                "events": 2,
-                "persons": 57
+                "events": 15,
+                "persons": 312
               },
               "ben": {
-                "events": 7,
-                "persons": 182
+                "events": 10,
+                "persons": 275
               }
             }
           },
@@ -1171,7 +1171,7 @@
             "12m": {
               "comm": {
                 "events": 1,
-                "persons": 16
+                "persons": 18
               },
               "ben": {
                 "events": 0,
@@ -1253,7 +1253,7 @@
               },
               "ben": {
                 "events": 1,
-                "persons": 15
+                "persons": 105
               }
             },
             "mk": {
@@ -1263,7 +1263,7 @@
               },
               "ben": {
                 "events": 40,
-                "persons": 134
+                "persons": 185
               }
             }
           },
@@ -1515,7 +1515,7 @@
               },
               "ben": {
                 "events": 10,
-                "persons": 248
+                "persons": 246
               }
             },
             "seminar": {
@@ -1735,7 +1735,7 @@
               },
               "ben": {
                 "events": 6,
-                "persons": 177
+                "persons": 182
               }
             },
             "seminar": {
@@ -1834,7 +1834,7 @@
                 "persons": 16
               },
               "ben": {
-                "events": 7,
+                "events": 8,
                 "persons": 99
               }
             },
@@ -1845,7 +1845,7 @@
               },
               "ben": {
                 "events": 6,
-                "persons": 178
+                "persons": 179
               }
             },
             "seminar": {
@@ -2064,8 +2064,8 @@
                 "persons": 0
               },
               "ben": {
-                "events": 7,
-                "persons": 112
+                "events": 6,
+                "persons": 95
               }
             },
             "seminar": {
@@ -2143,7 +2143,7 @@
               },
               "ben": {
                 "events": 24,
-                "persons": 552
+                "persons": 621
               }
             }
           },
@@ -2175,7 +2175,7 @@
               },
               "ben": {
                 "events": 5,
-                "persons": 130
+                "persons": 131
               }
             },
             "seminar": {
@@ -2294,8 +2294,8 @@
                 "persons": 0
               },
               "ben": {
-                "events": 8,
-                "persons": 156
+                "events": 0,
+                "persons": 0
               }
             },
             "mk": {
@@ -2358,8 +2358,8 @@
             },
             "mk": {
               "comm": {
-                "events": 0,
-                "persons": 0
+                "events": 1,
+                "persons": 30
               },
               "ben": {
                 "events": 0,
@@ -2395,7 +2395,7 @@
               },
               "ben": {
                 "events": 2,
-                "persons": 44
+                "persons": 26
               }
             },
             "seminar": {
@@ -2410,12 +2410,12 @@
             },
             "mk": {
               "comm": {
-                "events": 1,
-                "persons": 30
+                "events": 0,
+                "persons": 0
               },
               "ben": {
                 "events": 103,
-                "persons": 3093
+                "persons": 3123
               }
             }
           }
@@ -2463,7 +2463,7 @@
               },
               "ben": {
                 "events": 1,
-                "persons": 18
+                "persons": 52
               }
             },
             "mk": {
@@ -2473,7 +2473,7 @@
               },
               "ben": {
                 "events": 14,
-                "persons": 362
+                "persons": 377
               }
             }
           },
@@ -2504,8 +2504,8 @@
                 "persons": 0
               },
               "ben": {
-                "events": 0,
-                "persons": 0
+                "events": 1,
+                "persons": 18
               }
             },
             "seminar": {
@@ -2573,7 +2573,7 @@
               },
               "ben": {
                 "events": 1,
-                "persons": 18
+                "persons": 95
               }
             },
             "mk": {
@@ -2582,8 +2582,8 @@
                 "persons": 0
               },
               "ben": {
-                "events": 5,
-                "persons": 229
+                "events": 6,
+                "persons": 278
               }
             }
           },
