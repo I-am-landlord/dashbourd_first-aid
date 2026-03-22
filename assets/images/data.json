@@ -332,124 +332,29 @@
         }
       },
       "UA-14": {
-        "name_uk": "Донецька",
-        "team": "mixed",
-        "stats": {
-          "nc": {
-            "6m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 0,
-                "persons": 0
-              }
-            },
-            "12m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 1,
-                "persons": 15
-              }
-            },
-            "48m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 1,
-                "persons": 19
-              }
-            },
-            "seminar": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 0,
-                "persons": 0
-              }
-            },
-            "mk": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 0,
-                "persons": 0
-              }
-            }
-          },
-          "region": {
-            "6m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 30,
-                "persons": 476
-              }
-            },
-            "12m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 5,
-                "persons": 67
-              }
-            },
-            "48m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 1,
-                "persons": 13
-              }
-            },
-            "seminar": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 22,
-                "persons": 441
-              }
-            },
-            "mk": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 2,
-                "persons": 34
-              }
-            },
-            "online": {
-            "comm": {
-              "events": 0,
-              "persons": 0
-            },
-            "ben": {
-              "events": 32,
-              "persons": 993
-            }
-          }
-        }
-      },
+  "name_uk": "Донецька",
+  "team": "mixed",
+  "stats": {
+    "nc": {
+      "6m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+      "12m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 1, "persons": 15 } },
+      "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 1, "persons": 19 } },
+      "seminar": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+      "mk": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } }
+    },
+    "region": {
+      "6m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 30, "persons": 476 } },
+      "12m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 5, "persons": 67 } },
+      "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 1, "persons": 13 } },
+      "seminar": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 22, "persons": 441 } },
+      "mk": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 2, "persons": 34 } },
+      "online": {
+        "comm": { "events": 0, "persons": 0 },
+        "ben": { "events": 32, "persons": 993 }
+      } 
+    } 
+  } 
+}, 
       "UA-18": {
         "name_uk": "Житомирська",
         "team": "mixed",
@@ -1001,118 +906,29 @@
         }
       },
       "UA-30": {
-        "name_uk": "Київ",
-        "team": "mixed",
-        "stats": {
-          "nc": {
-            "6m": {
-              "comm": {
-                "events": 87,
-                "persons": 1059
-              },
-              "ben": {
-                "events": 57,
-                "persons": 985
-              }
-            },
-            "12m": {
-              "comm": {
-                "events": 6,
-                "persons": 76
-              },
-              "ben": {
-                "events": 12,
-                "persons": 124
-              }
-            },
-            "48m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 11,
-                "persons": 167
-              }
-            },
-            "seminar": {
-              "comm": {
-                "events": 9,
-                "persons": 286
-              },
-              "ben": {
-                "events": 19,
-                "persons": 600
-              }
-            },
-            "mk": {
-              "comm": {
-                "events": 15,
-                "persons": 312
-              },
-              "ben": {
-                "events": 10,
-                "persons": 275
-              }
-            },
-            "online": {
-              "comm": { "persons": 46, "events": 2 },
-              "ben": { "persons": 97, "events": 6 }
-          },
-          "region": {
-            "6m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 7,
-                "persons": 101
-              }
-            },
-            "12m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 2,
-                "persons": 26
-              }
-            },
-            "48m": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 0,
-                "persons": 0
-              }
-            },
-            "seminar": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 20,
-                "persons": 388
-              }
-            },
-            "mk": {
-              "comm": {
-                "events": 0,
-                "persons": 0
-              },
-              "ben": {
-                "events": 260,
-                "persons": 7825
-              }
-            }
-          }
-        }
-      },
+  "name_uk": "Київ",
+  "team": "mixed",
+  "stats": {
+    "nc": {
+      "6m": { "comm": { "events": 87, "persons": 1059 }, "ben": { "events": 57, "persons": 985 } },
+      "12m": { "comm": { "events": 6, "persons": 76 }, "ben": { "events": 12, "persons": 124 } },
+      "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 11, "persons": 167 } },
+      "seminar": { "comm": { "events": 9, "persons": 286 }, "ben": { "events": 19, "persons": 600 } },
+      "mk": { "comm": { "events": 15, "persons": 312 }, "ben": { "events": 10, "persons": 275 } },
+      "online": {
+        "comm": { "persons": 46, "events": 2 },
+        "ben": { "persons": 97, "events": 6 }
+      } 
+    }, 
+    "region": {
+      "6m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 7, "persons": 101 } },
+      "12m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 2, "persons": 26 } },
+      "48m": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 0, "persons": 0 } },
+      "seminar": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 20, "persons": 388 } },
+      "mk": { "comm": { "events": 0, "persons": 0 }, "ben": { "events": 260, "persons": 7825 } }
+    } 
+  } 
+}, 
       "UA-35": {
         "name_uk": "Кіровоградська",
         "team": "mixed",
