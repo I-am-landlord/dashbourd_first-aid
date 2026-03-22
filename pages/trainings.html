@@ -132,6 +132,8 @@ input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:
                     <button class="prog-btn border-2 p-4 rounded-2xl text-[10px] font-black text-left uppercase" data-val="12m" data-i18n="prog.12h">12 годин</button>
                     <button class="prog-btn border-2 p-4 rounded-2xl text-[10px] font-black text-left uppercase" data-val="seminar" data-i18n="prog.sem">Семінари</button>
                     <button class="prog-btn border-2 p-4 rounded-2xl text-[10px] font-black text-left uppercase" data-val="mk" data-i18n="prog.mk">МК</button>
+                    <button class="prog-btn border-2 p-4 rounded-2xl text-[10px] font-black text-left uppercase" data-val="online" data-i18n="prog.online">Онлайн</button>
+
                 </div>
             </section>
         </aside>
@@ -347,11 +349,12 @@ input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:
 
        
 
-       function renderPanel(allStats) {
+      function renderPanel(allStats) {
     const panel = document.getElementById('info-panel');
-    let tP = 0, tE = 0, tCP = 0, tBP = 0, tCE = 0, tBE = 0, combinedDet = {};
+    let tP = 0, tE = 0, tCP = 0, tBP = 0, tCE = 0, tBE = 0;
+    let combinedDet = {};
 
-    // 1. Універсальний внутрішній словник (Заміна ключів + Переклади)
+    // 1. Словник (включаючи онлайн)
     const lib = {
         uk: {
             "train.total_reach": "Загальне охоплення",
@@ -361,14 +364,14 @@ input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:
             "train.cat_comm": "Комерція",
             "train.cat_ben": "Бенефіціари",
             "train.by_prog": "Статистика за програмами",
-            "train.comm_short": "Комерція",
-            "train.ben_short": "Бенефіціари",
-            // Перехоплення технічних ключів програм
+            "train.comm_short": "Ком.",
+            "train.ben_short": "Бен.",
             "6m": "6-ти годинний",
             "12m": "12-ти годинний",
             "48m": "48-ми годинний",
             "seminar": "Семінар",
-            "mk": "Майстер-клас"
+            "mk": "Майстер-клас",
+            "online": "Онлайн навчання"
         },
         en: {
             "train.total_reach": "Total Reach",
@@ -384,25 +387,33 @@ input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:
             "12m": "12 hours Program",
             "48m": "48 hours Program",
             "seminar": "Seminar",
-            "mk": "Master Class"
+            "mk": "Master Class",
+            "online": "Online Training"
         }
     };
 
-    // Функція-помічник для отримання значень
     const lang = typeof currentLang !== 'undefined' ? currentLang : 'uk';
     const t = (key) => (lib[lang] && lib[lang][key]) || (window.i18n && window.i18n[key]) || key;
 
-    // Розрахунок статистики
+    // 2. Розрахунок загальної статистики (Aggregate)
     Object.values(allStats).forEach(s => {
         if (!s) return;
-        tP += s.totalP; tCP += s.cp; tBP += s.bp; tCE += s.ce; tBE += s.be; tE += (s.ce + s.be);
+        tP += s.totalP; tCP += s.cp; tBP += s.bp; 
+        tCE += s.ce; tBE += s.be; 
+        
         Object.entries(s.details).forEach(([k, v]) => {
             if (!combinedDet[k]) combinedDet[k] = { cp: 0, bp: 0 };
-            combinedDet[k].cp += v.cp; combinedDet[k].bp += v.bp;
+            combinedDet[k].cp += v.cp; 
+            combinedDet[k].bp += v.bp;
         });
     });
 
+    // 3. Визначаємо, що виводимо: конкретний регіон чи загальну інфу
     const cur = selId ? (allStats[selId] || { cp: 0, bp: 0, ce: 0, be: 0, details: {} }) : { cp: tCP, bp: tBP, ce: tCE, be: tBE, details: combinedDet };
+    
+    // ВАЖЛИВО: tE для відображення має бути сумою обраного регіону
+    const displayEvents = selId ? (cur.ce + cur.be) : (tCE + tBE);
+    
     const name = typeof getRegionName === 'function' ? getRegionName(selId) : (selId || t("train.all_ukraine"));
     const oldVal = parseInt(document.getElementById('main-count')?.innerText || 0);
 
@@ -415,7 +426,7 @@ input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:
                     <p class="text-xs font-bold text-gray-500 uppercase mt-2">${t("train.people")}</p>
                 </div>
                 <div class="text-right">
-                    <p class="text-3xl font-black text-red-600">${tE}</p>
+                    <p class="text-3xl font-black text-red-600">${displayEvents}</p>
                     <p class="text-[10px] font-bold text-gray-500 uppercase">${t("train.events")}</p>
                 </div>
             </div>
@@ -440,8 +451,10 @@ input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:
 
         <div class="space-y-4">
             <p class="text-xs font-black text-gray-400 uppercase tracking-[0.4em] mb-4">${t("train.by_prog")}</p>
-            ${Object.entries(cur.details).map(([k, v]) => (v.cp + v.bp > 0) ? `
-                <div class="p-6 bg-gray-50 rounded-[1em] border-2 ${typeof prog !== 'undefined' && prog === k ? 'border-red-600 bg-white' : 'border-transparent'}">
+            ${Object.entries(cur.details)
+                .sort((a, b) => (b[1].cp + b[1].bp) - (a[1].cp + a[1].bp)) // Сортуємо за популярністю
+                .map(([k, v]) => (v.cp + v.bp > 0) ? `
+                <div class="p-6 bg-gray-50 rounded-[1em] border-2 ${prog === k ? 'border-red-600 bg-white' : 'border-transparent'}">
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-black uppercase tracking-wider">${t(k)}</span>
                         <span class="text-lg font-black text-red-600">${v.cp + v.bp}</span>
@@ -454,10 +467,10 @@ input[type=radio]:checked+span, input[type=checkbox]:checked+span { font-weight:
         </div>
     `;
 
-    // Запуск анімації
     if (typeof animateValue === 'function') {
-        animateValue('main-count', oldVal, selId ? cur.cp + cur.bp : tP, 1000);
+        animateValue('main-count', oldVal, (owner === 'commerce' ? cur.cp : owner === 'beneficiary' ? cur.bp : cur.cp + cur.bp), 1000);
     }
+
 }
 
         // 6. ДОПОМІЖНІ ФУНКЦІЇ
@@ -585,4 +598,3 @@ function refresh() {
     </script>
 </body>
 </html>
-
