@@ -437,6 +437,15 @@
                 "events": 2,
                 "persons": 34
               }
+            },
+            "online": {
+            "comm": {
+              "events": 0,
+              "persons": 0
+            },
+            "ben": {
+              "events": 32,
+              "persons": 993
             }
           }
         }
@@ -1045,7 +1054,10 @@
                 "events": 10,
                 "persons": 275
               }
-            }
+            },
+            "online": {
+              "comm": { "persons": 46, "events": 2 },
+              "ben": { "persons": 97, "events": 6 }
           },
           "region": {
             "6m": {
